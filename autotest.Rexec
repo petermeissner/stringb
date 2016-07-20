@@ -1,0 +1,22 @@
+#!/usr/bin/Rscript
+
+library(testthat)
+
+if( Sys.info()["nodename"]=="ZUKD208" ){
+	auto_test(
+		code_path="C:/Dropbox/RPackages/stringb/r",
+		test_path="C:/Dropbox/RPackages/stringb/tests/testthat"
+	)
+}
+
+if( Sys.info()["nodename"]=="JONAS" ){
+	auto_test(
+		code_path="C:/Users/peter/Dropbox/RPackages/stringb/r",
+		test_path="C:/Users/peter/Dropbox/RPackages/stringb/tests/testthat"
+	)
+}
+
+if( Sys.info()["nodename"] %in% c("peter-mint", "peter-VirtualBox") ){
+	auto_test_package(pkg = "~/Dropbox/RPackages/diffrprojects", reporter = "summary")
+}
+

@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.travis\.yml$
+autotest.Rexec
+README.html
+README.Rmd
+todo.txt
+dev.R
+benchmarks/*
+meta.R
+README_files

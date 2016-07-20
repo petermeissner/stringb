@@ -1,0 +1,35 @@
+Package: stringb
+Title: Convenient Base R String Handling
+Date: 2016-07-15
+Version: 0.1.1.90000
+Authors@R: c(
+    person(
+      "Peter", "Meissner",
+      email = "retep.meissner@gmail.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: Base R already ships with string handling capabilities
+    'out-of-the-box' but lacks streamlined function names and workflow.
+    The stringi (stringr) package on the other hand has well named functions
+    and allows for a streamlined workflow but adds further dependencies and
+    regular expression interpretation between base R functions and stringi
+    functions might differ. This packages aims at closing the gap by providing
+    another string handling package solely based wrapping bese R functions into
+    stringr/stringi function names and workflow. Fruthermore, stringb adds
+    some further convenience functions for sring handling.
+Depends:
+    R (>= 3.0.0)
+License: MIT + file LICENSE
+LazyData: TRUE
+Imports:
+    stats,
+    graphics
+Suggests:
+    testthat,
+    knitr,
+    rmarkdown
+BugReports: https://github.com/petermeissner/stringb/issues
+URL: https://github.com/petermeissner/stringb
+RoxygenNote: 5.0.1
+VignetteBuilder: knitr
