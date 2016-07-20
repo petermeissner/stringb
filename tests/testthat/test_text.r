@@ -8,7 +8,7 @@ test_that("text_count works", {
   expect_true({
     sum(text_count("12345678",1:8, vectorize = TRUE))
   })
-}
+})
 
 
 #### text_locate ===============================================================
