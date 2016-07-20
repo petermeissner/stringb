@@ -23,6 +23,7 @@ text_count.default <- function(string, pattern, sum=FALSE, vectorize=FALSE, ...)
   if(vectorize){
     tmp <- mapply(gregexpr, pattern=pattern, text=string)
     names(tmp) <- NULL
+    tmp <- vapply(tmp, function(tmp){sum(!is.na(tmp) & tmp!=-1)}, integer(1))
     tomp <-
       as.data.frame(
         do.call(
@@ -30,7 +31,7 @@ text_count.default <- function(string, pattern, sum=FALSE, vectorize=FALSE, ...)
           mapply(c,i=seq_along(string), p=seq_along(pattern), SIMPLIFY = FALSE)
         )
       )
-    tmp <- cbind(tmp, tomp)
+    tmp <- cbind(n=tmp, tomp)
     return(tmp)
   }else{
     tmp <- gregexpr(pattern, string, ...)
