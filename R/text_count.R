@@ -32,17 +32,20 @@ text_count.default <- function(string, pattern, sum=FALSE, vectorize=FALSE, ...)
         )
       )
     tmp <- cbind(n=tmp, tomp)
-    return(tmp)
+    if(sum){
+      return(sum(tmp$n))
+    }else{
+      return(tmp)
+    }
   }else{
     tmp <- gregexpr(pattern, string, ...)
+    tmp <- vapply(tmp, function(tmp){sum(!is.na(tmp) & tmp!=-1)}, integer(1))
+    if(sum){
+      return(sum(tmp))
+    }else{
+      return(tmp)
+    }
   }
-  tmp <- vapply(tmp, function(tmp){sum(!is.na(tmp) & tmp!=-1)}, integer(1))
-  if(sum){
-    return(sum(tmp))
-  }else{
-    return(tmp)
-  }
-
 }
 
 
