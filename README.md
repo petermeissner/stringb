@@ -11,6 +11,8 @@ Convenient base R string handling.
 *unstable* - in wild development with fuRiouS rEstRucturINg and biG biG pOKing
 
 [![Travis-CI Build Status](https://travis-ci.org/petermeissner/stringb.svg?branch=master)](https://travis-ci.org/petermeissner/stringb)
+[![codecov](https://codecov.io/gh/petermeissner/stringb/branch/master/graph/badge.svg)](https://codecov.io/gh/petermeissner/stringb)
+[![CRAN version](http://www.r-pkg.org/badges/version/stringb)](https://cran.r-project.org/package=stringb)
 
 
 **Description**
@@ -82,7 +84,7 @@ library(stringb)
 ```
 
 ```
-## [1] "E:/Dokumente/R/win-library/3.3/stringb/testfiles/rc_1.txt"
+## [1] "/home/peter/R/x86_64-pc-linux-gnu-library/3.3/stringb/testfiles/rc_1_ch1.txt"
 ```
 
 ```r
@@ -94,8 +96,9 @@ text_read(
 ```
 
 ```
-##  [1] "I"    "WAS"  "born" "in"   "the"  "year" "1632" ""     "in"   "the" 
-## [11] "city" "of"   "York"
+##  [1] "Project"   "Gutenberg" "License"   "included"  "with"     
+##  [6] "this"      "eBook"     "or"        "online"    "at"       
+## [11] "www"       "gutenberg" "org"
 ```
 
 Although, text_read() is just a wrapper araound readLines() it has become more powerful, consistent and streamlined by (1) always producing UTF-8 encoded character vectors, (2) allowing the usage of all readLines() options - e.g. n, (3) and adding further useful functionality like on-the-fly-tokenization.
@@ -108,7 +111,7 @@ library(stringb)
 ```
 
 ```
-## [1] "E:/Dokumente/R/win-library/3.3/stringb/testfiles/rc_2.txt"
+## [1] "/home/peter/R/x86_64-pc-linux-gnu-library/3.3/stringb/testfiles/rc_2_ch1.txt"
 ```
 
 ```r
