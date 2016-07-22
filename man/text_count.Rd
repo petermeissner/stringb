@@ -21,6 +21,8 @@ matched to lines (with recycling if needed) instead of using on element on
 all lines}
 
 \item{...}{further arguments passed through to \link[base]{gregexpr}}
+
+\item{if}{true all element-wise counts will be summed up}
 }
 \description{
 generic for counting pattern occurences

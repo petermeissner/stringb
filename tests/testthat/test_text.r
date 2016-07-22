@@ -15,7 +15,12 @@ test_that("text_split works", {
     text_split(c("1111","1111"),c("","1"))
   })
   expect_warning({
-    text_split(c("1111","1111"),c("","1"), vectorize = TRUE)
+    text_split(c("1","1"),c("","1"), vectorize = TRUE)
+  }, NA)
+  expect_true({
+    all(
+      text_split(c("1","1"),c("","1"), vectorize = TRUE)$t==c("1","")
+    )
   })
   expect_true({
     class(text_split(c("111"),c("1",2), vectorize = TRUE)$t)=="character"

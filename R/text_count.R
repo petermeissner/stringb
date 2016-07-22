@@ -5,6 +5,7 @@
 #'    pattern with length larger than 1 be allowed and if so, should it be
 #'    matched to lines (with recycling if needed) instead of using on element on
 #'    all lines
+#' @param if true all element-wise counts will be summed up
 #' @param ... further arguments passed through to \link[base]{gregexpr}
 #' @export
 text_count <- function(string, pattern, sum=FALSE, vectorize=FALSE, ...){
