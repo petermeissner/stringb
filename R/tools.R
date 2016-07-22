@@ -30,11 +30,11 @@ stringb_arrange <- function(df, ...){
 }
 
 #' text function: wrapper for system.file() to access test files
-#' @export
 #' @param x name of the file
-stringb_tf <- function(x=NULL){
+#' @keywords internal
+test_file <- function(x=NULL){
   if(is.numeric(x)){
-    return(stringb_tf(stringb_tf()[(x-1) %% length(stringb_tf()) +1 ]))
+    return(stringb:::test_file(stringb:::test_file()[(x-1) %% length(stringb:::test_file()) +1 ]))
   }
   if(is.null(x)){
     return(list.files(system.file("testfiles", package = "stringb")))
@@ -46,22 +46,22 @@ stringb_tf <- function(x=NULL){
 }
 
 
-#' have a look at environments
-#' @param env environment list objects
-#' @param filter filter for classes to be returned
-#' @export
-stringb_ls <- function(env = globalenv(), filter=FALSE){
-  names <- as.list(ls(env))
-  worker <- function(name){
-    data.frame(name, class=class(get(name, envir=env)))
-  }
-  tmp <- do.call(rbind, lapply(names, worker))
-  if(filter!=FALSE){
-    tmp[tmp$class %in% filter,]
-  }else{
-    return(tmp)
-  }
-}
+# #' have a look at environments
+# #' @param env environment list objects
+# #' @param filter filter for classes to be returned
+# #' @export
+# stringb_ls <- function(env = globalenv(), filter=FALSE){
+#   names <- as.list(ls(env))
+#   worker <- function(name){
+#     data.frame(name, class=class(get(name, envir=env)))
+#   }
+#   tmp <- do.call(rbind, lapply(names, worker))
+#   if(filter!=FALSE){
+#     tmp[tmp$class %in% filter,]
+#   }else{
+#     return(tmp)
+#   }
+# }
 
 
 

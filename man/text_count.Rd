@@ -15,14 +15,14 @@ text_count(string, pattern, sum = FALSE, vectorize = FALSE, ...)
 
 \item{pattern}{regex to search for}
 
+\item{sum}{if true all element-wise counts will be summed up}
+
 \item{vectorize}{should function be used in vectorized mode, i.e. should a
 pattern with length larger than 1 be allowed and if so, should it be
 matched to lines (with recycling if needed) instead of using on element on
 all lines}
 
 \item{...}{further arguments passed through to \link[base]{gregexpr}}
-
-\item{if}{true all element-wise counts will be summed up}
 }
 \description{
 generic for counting pattern occurences
