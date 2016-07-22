@@ -34,7 +34,7 @@ stringb_arrange <- function(df, ...){
 #' @keywords internal
 test_file <- function(x=NULL){
   if(is.numeric(x)){
-    return(stringb:::test_file(stringb:::test_file()[(x-1) %% length(stringb:::test_file()) +1 ]))
+    return(test_file(test_file()[(x-1) %% length(test_file()) +1 ]))
   }
   if(is.null(x)){
     return(list.files(system.file("testfiles", package = "stringb")))

@@ -5,7 +5,7 @@
 #'    pattern with length larger than 1 be allowed and if so, should it be
 #'    matched to lines (with recycling if needed) instead of using on element on
 #'    all lines
-#' @param ...
+#' @param ... further arguments passed through
 #' @export
 text_dup <- function(string, times, vectorize, ...){
   UseMethod("text_dup")

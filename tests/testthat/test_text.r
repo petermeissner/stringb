@@ -143,12 +143,12 @@ context("text_detect")
 
 test_that("text_read", {
   expect_true(
-    length(text_read(stringb:::test_file(1)))==length(text_detect(text_read(stringb:::test_file(1)),""))
+    length(text_read(test_file(1)))==length(text_detect(text_read(test_file(1)),""))
   )
   expect_true(
     any(
       text_detect(
-        text_read(stringb:::test_file("test_latin1.txt"), encoding="latin1"),
+        text_read(test_file("test_latin1.txt"), encoding="latin1"),
         "\ue4 \uf6 \ufc \udf"
       )
     )
@@ -156,7 +156,7 @@ test_that("text_read", {
   expect_true(
     any(
       text_detect(
-        text_read(stringb:::test_file("test_utf8.txt")),
+        text_read(test_file("test_utf8.txt")),
         "\ue4 \uf6 \ufc \udf"
       )
     )
@@ -172,23 +172,23 @@ test_that("text_read", {
   expect_true(
     any(
       Encoding(
-        text_read(stringb:::test_file("test_latin1.txt"), encoding = "latin1")
+        text_read(test_file("test_latin1.txt"), encoding = "latin1")
       ) == "UTF-8"
     )
   )
-  expect_true( any(Encoding(text_read(stringb:::test_file("test_utf8.txt"))) == "UTF-8"))
-  expect_true( any(Encoding(text_read(stringb:::test_file("test_latin1.txt"), encoding="latin1")) == "UTF-8"))
-  expect_true( any(Encoding(text_read(stringb:::test_file("test_utf8.txt"), encoding="latin1")) == "UTF-8"))
+  expect_true( any(Encoding(text_read(test_file("test_utf8.txt"))) == "UTF-8"))
+  expect_true( any(Encoding(text_read(test_file("test_latin1.txt"), encoding="latin1")) == "UTF-8"))
+  expect_true( any(Encoding(text_read(test_file("test_utf8.txt"), encoding="latin1")) == "UTF-8"))
   expect_true(
     all(
-      nchar(text_read(stringb:::test_file("test_utf8.txt"), encoding="UTF-8")) ==
-      nchar(text_read(stringb:::test_file("test_latin1.txt"), encoding="latin1"))
+      nchar(text_read(test_file("test_utf8.txt"), encoding="UTF-8")) ==
+      nchar(text_read(test_file("test_latin1.txt"), encoding="latin1"))
     )
   )
-  expect_true( length(text_read(stringb:::test_file("test_utf8.txt"), encoding="latin1", tokenize=NULL))==1 )
-  expect_true( length(text_read(stringb:::test_file("test_utf8.txt"), tokenize = "\n"))>1 )
-  expect_true( length(text_read(stringb:::test_file("test_utf8.txt"), tokenize = " "))>1 )
-  expect_true( length(text_read(stringb:::test_file("test_utf8.txt"), tokenize = function(x){strsplit(x,"")} ))>1 )
+  expect_true( length(text_read(test_file("test_utf8.txt"), encoding="latin1", tokenize=NULL))==1 )
+  expect_true( length(text_read(test_file("test_utf8.txt"), tokenize = "\n"))>1 )
+  expect_true( length(text_read(test_file("test_utf8.txt"), tokenize = " "))>1 )
+  expect_true( length(text_read(test_file("test_utf8.txt"), tokenize = function(x){strsplit(x,"")} ))>1 )
 })
 
 
