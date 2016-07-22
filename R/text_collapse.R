@@ -2,7 +2,7 @@
 
 #' function for collapsing text vectors
 #' @param x object to be collapsed
-#' @param sep separator between text parts
+#' @param coll separator between collapsed text parts
 #' @param ... additional parameter passed through to methods
 #' @export
 text_collapse <- function (x, coll="") {

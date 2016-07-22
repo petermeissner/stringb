@@ -21,7 +21,7 @@ text_collapse(x, coll = "")
 \arguments{
 \item{x}{object to be collapsed}
 
-\item{sep}{separator between text parts}
+\item{coll}{separator between collapsed text parts}
 
 \item{...}{additional parameter passed through to methods}
 }
