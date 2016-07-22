@@ -3,6 +3,7 @@
 S3method(text_collapse,data.frame)
 S3method(text_collapse,default)
 S3method(text_collapse,list)
+S3method(text_collapse,matrix)
 S3method(text_count,default)
 S3method(text_detect,default)
 S3method(text_locate,default)

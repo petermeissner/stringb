@@ -5,7 +5,7 @@
 #' @param sep separator between text parts
 #' @param ... additional parameter passed through to methods
 #' @export
-text_collapse <- function (x, ..., sep) {
+text_collapse <- function (x, coll="") {
   UseMethod("text_collapse")
 }
 
@@ -13,33 +13,41 @@ text_collapse <- function (x, ..., sep) {
 #' @rdname text_collapse
 #' @method text_collapse default
 #' @export
-text_collapse.default <- function(x, ..., sep=""){
-  paste(x, ..., sep=sep, collapse = sep)
+text_collapse.default <- function(x, coll=""){
+    paste0(unlist(x), collapse = coll)
 }
 
-#' text_collapse() method for lists
-#' @export
+#' text_collapse() mehtod for list
 #' @rdname text_collapse
 #' @method text_collapse list
-text_collapse.list <- function(x, ..., sep=""){
-      x   <- lapply(x, text_collapse, ..., sep=ifelse(length(sep)>1,sep[2], sep))
-      x   <- unlist(x, recursive = FALSE)
-      text_collapse(x, sep = sep )
+#' @export
+text_collapse.list <- function(x, coll=""){
+  text_collapse(
+    unlist(lapply(x, text_collapse, coll=coll)),
+    coll)
 }
+
 
 
 #' text_collapse() method for data.frames
 #' @export
 #' @rdname text_collapse
 #' @method text_collapse data.frame
-text_collapse.data.frame <- function(x, ..., sep=c("", "\n")){
-  if(is.data.frame(x)){
-    x <- apply(x, 1, text_collapse, sep=sep[1])
+text_collapse.data.frame <- function(x, coll=""){
+    x <- apply(x, 1, text_collapse, coll=coll[1])
     x <- unlist(x, recursive = FALSE)
+  if(length(coll)>1){
+    coll <- coll[2]
   }
-  if(length(sep)>1){
-    sep <- sep[2]
-  }
-  text_collapse(x, sep=sep)
+  text_collapse(x, coll=coll)
+}
+
+
+#' text_collapse() method for matrix
+#' @export
+#' @rdname text_collapse
+#' @method text_collapse matrix
+text_collapse.matrix <- function(x, coll=""){
+  text_collapse(as.data.frame(x), coll)
 }
 

@@ -5,30 +5,35 @@
 \alias{text_collapse.data.frame}
 \alias{text_collapse.default}
 \alias{text_collapse.list}
+\alias{text_collapse.matrix}
 \title{function for collapsing text vectors}
 \usage{
-text_collapse(x, ..., sep)
+text_collapse(x, coll = "")
 
-\method{text_collapse}{default}(x, ..., sep = "")
+\method{text_collapse}{default}(x, coll = "")
 
-\method{text_collapse}{list}(x, ..., sep = "")
+\method{text_collapse}{list}(x, coll = "")
 
-\method{text_collapse}{data.frame}(x, ..., sep = c("", "\\n"))
+\method{text_collapse}{data.frame}(x, coll = "")
+
+\method{text_collapse}{matrix}(x, coll = "")
 }
 \arguments{
 \item{x}{object to be collapsed}
 
-\item{...}{additional parameter passed through to methods}
-
 \item{sep}{separator between text parts}
+
+\item{...}{additional parameter passed through to methods}
 }
 \description{
 function for collapsing text vectors
 
 default method for text_collapse()
 
-text_collapse() method for lists
+text_collapse() mehtod for list
 
 text_collapse() method for data.frames
+
+text_collapse() method for matrix
 }
 
