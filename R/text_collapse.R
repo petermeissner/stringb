@@ -14,7 +14,7 @@ text_collapse <- function (x, ..., sep) {
 #' @method text_collapse default
 #' @export
 text_collapse.default <- function(x, ..., sep=""){
-  paste0(x, ..., sep="", collapse = sep)
+  paste(x, ..., sep=sep, collapse = sep)
 }
 
 #' text_collapse() method for lists
