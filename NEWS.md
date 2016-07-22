@@ -16,6 +16,7 @@ version 0.1.1 [2016-07-17 ...]
     - text_detect()
     - text_locate()
     - text_locate_all()
+    - text_split()
 
 
 

@@ -1,3 +1,19 @@
+#' a stringsAsFactors=FALSE data.frame
+#' @param ... passed through to data.frame
+#' @param stringsAsFactors set to false by default
+#' @keywords internal
+data.frame <- function(..., stringsAsFactors=FALSE){
+  base::data.frame(..., stringsAsFactors = stringsAsFactors)
+}
+
+#' a stringsAsFactors=FALSE as.data.frame
+#' @param ... passed through to data.frame
+#' @param stringsAsFactors set to false by default
+#' @keywords internal
+as.data.frame <- function(..., stringsAsFactors=FALSE){
+  base::as.data.frame(..., stringsAsFactors = stringsAsFactors)
+}
+
 #' function to sort df by variables
 #' @param df data.frame to be sorted
 #' @param ... column names to use for sorting
