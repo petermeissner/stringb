@@ -2,19 +2,27 @@ NEWS stringb
 ==========================================================================
 
 
-version 0.1.5 [2016-07-23 ...] 
+    
+    
+
+
+
+version 0.1.5 [2016-07-25 ...] 
 --------------------------------------------------------------------------
 
 * BUGFIXES
-
+ - text_write : minor fixes
 
     
 * FEATURE
-    
+    - text_replace()
+    - text_replace_all()
+    - text_trim()
+    - text_delete()
 
     
 * DEVELOPMENT
-    
+    - putting tests in separate files
     
     
 
