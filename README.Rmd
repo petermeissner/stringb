@@ -108,6 +108,7 @@ friday_occurs <- text_detect(text, "FRIDAY", ignore.case=TRUE)
 plot(friday_occurs, type = "n")
 abline(v=which(friday_occurs))
 title("Friday Appearing in Robinson Crusoe")
+
 ```
 
 Text_detect() is another example for a streamlined interface (easier to remeber than grepl) with all base-R whistles and bells still beeing there - almost all base-R pattern matching functions have the ignore.case options to make pattern matching case insensitive. 
