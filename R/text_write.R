@@ -18,8 +18,7 @@
 #' @param ... further arguments that might be passed to methods
 #' (not used at the moment)
 #' @export
-#'
-text_write <- function(text, file, sep, encoding="UTF-8", ...){
+text_write <- function(string, file, sep="\n", encoding="UTF-8", ...){
   UseMethod("text_write")
 }
 
@@ -29,10 +28,9 @@ text_write <- function(text, file, sep, encoding="UTF-8", ...){
 #' @rdname text_write
 #' @method text_write default
 #' @export
-#'
-text_write.default <- function(text, file, sep, encoding="UTF-8", ...){
+text_write.default <- function(string, file, sep="\n", encoding="UTF-8", ...){
   writeLines(
-    text     = iconv(as.character(text),to=encoding),
+    text     = iconv(as.character(string),to=encoding),
     con      = file,
     sep      = sep,
     useBytes = TRUE

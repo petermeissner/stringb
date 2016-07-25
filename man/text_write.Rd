@@ -5,13 +5,12 @@
 \alias{text_write.default}
 \title{write text to file}
 \usage{
-text_write(text, file, sep, encoding = "UTF-8", ...)
+text_write(string, file, sep = "\\n", encoding = "UTF-8", ...)
 
-\method{text_write}{default}(text, file, sep, encoding = "UTF-8", ...)
+\method{text_write}{default}(string, file, sep = "\\n", encoding = "UTF-8",
+  ...)
 }
 \arguments{
-\item{text}{text to be written}
-
 \item{file}{file name or file path or an \link[base]{connection} object -
 passed through to writeLines()'s con argument}
 
@@ -22,6 +21,8 @@ passed through to writeLines()'s con argument}
 
 \item{...}{further arguments that might be passed to methods
 (not used at the moment)}
+
+\item{text}{text to be written}
 }
 \description{
 A generic function to write text to file (or a \link[base]{connection}) and
