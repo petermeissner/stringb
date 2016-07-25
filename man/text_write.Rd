@@ -11,6 +11,8 @@ text_write(string, file, sep = "\\n", encoding = "UTF-8", ...)
   ...)
 }
 \arguments{
+\item{string}{text to be written}
+
 \item{file}{file name or file path or an \link[base]{connection} object -
 passed through to writeLines()'s con argument}
 
@@ -21,8 +23,6 @@ passed through to writeLines()'s con argument}
 
 \item{...}{further arguments that might be passed to methods
 (not used at the moment)}
-
-\item{text}{text to be written}
 }
 \description{
 A generic function to write text to file (or a \link[base]{connection}) and

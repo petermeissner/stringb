@@ -9,7 +9,7 @@
 #'    encoding can be changed to any encoding supported by \link[base]{iconv}
 #'    (see also \link[base]{iconvlist})
 #'
-#' @param text text to be written
+#' @param string text to be written
 #' @param file file name or file path or an \link[base]{connection} object -
 #'    passed through to writeLines()'s con argument
 #' @param sep character to separate lines (i.e. vector elements) from each other
