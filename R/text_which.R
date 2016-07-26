@@ -47,3 +47,34 @@ text_grepv <- function(string, pattern, ...){
 text_which_value.default <- function(string, pattern, ...){
   grep(pattern=pattern, x=string, value=TRUE, ...)
 }
+
+
+#' generic for subsetting/filtering vectors
+#' @rdname text_value_which
+#' @export
+text_subset <- function(string, pattern, ...){
+  UseMethod("text_which_value")
+}
+
+#' generic for subsetting/filtering vectors
+#' @rdname text_value_which
+#' @export
+text_filter <- function(string, pattern, ...){
+  UseMethod("text_which_value")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
