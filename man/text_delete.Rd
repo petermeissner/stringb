@@ -12,7 +12,7 @@ text_delete(string, pattern = NULL, ...)
 \arguments{
 \item{string}{text to be replaced}
 
-\item{pattern}{regex to look for}
+\item{pattern}{regex to look for and delete}
 
 \item{...}{further parameter passed through to sub}
 }

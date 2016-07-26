@@ -1,7 +1,8 @@
 #' replacing patterns in string
 #' @param string text to be replaced
 #' @param pattern regex to look for
-#' @param further parameter passed through to sub
+#' @param replacement replacement for pattern found
+#' @param ... further parameter passed through to sub
 #' @export
 text_replace <- function(string, pattern=NULL, replacement=NULL, ...){
   UseMethod("text_replace")
@@ -20,7 +21,8 @@ text_replace.default <- function(string, pattern=NULL, replacement=NULL, ...){
 #' replacing patterns in string
 #' @param string text to be replaced
 #' @param pattern regex to look for
-#' @param further parameter passed through to gsub
+#' @param replacement replacement for pattern found
+#' @param ... further parameter passed through to gsub
 #' @export
 text_replace_all <- function(string, pattern=NULL, replacement=NULL, ...){
   UseMethod("text_replace_all")
@@ -38,7 +40,7 @@ text_replace_all.default <- function(string, pattern=NULL, replacement=NULL, ...
 
 #' deleting patterns in string
 #' @param string text to be replaced
-#' @param pattern regex to look for
+#' @param pattern regex to look for and delete
 #' @param ... further parameter passed through to sub
 #' @export
 text_delete <- function(string, pattern=NULL, ...){

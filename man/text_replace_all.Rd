@@ -15,7 +15,9 @@ text_replace_all(string, pattern = NULL, replacement = NULL, ...)
 
 \item{pattern}{regex to look for}
 
-\item{further}{parameter passed through to gsub}
+\item{replacement}{replacement for pattern found}
+
+\item{...}{further parameter passed through to gsub}
 }
 \description{
 replacing patterns in string

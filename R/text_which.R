@@ -50,14 +50,18 @@ text_which_value.default <- function(string, pattern, ...){
 
 
 #' generic for subsetting/filtering vectors
-#' @rdname text_value_which
+#' @param string text to be subsetted
+#' @param pattern regular expression to subset by
+#' @param ... further arguments passed through to \link[base]{grep}
 #' @export
 text_subset <- function(string, pattern, ...){
   UseMethod("text_which_value")
 }
 
 #' generic for subsetting/filtering vectors
-#' @rdname text_value_which
+#' @param string text to be subsetted
+#' @param pattern regular expression to subset by
+#' @param ... further arguments passed through to \link[base]{grep}
 #' @export
 text_filter <- function(string, pattern, ...){
   UseMethod("text_which_value")

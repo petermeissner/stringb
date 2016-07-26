@@ -15,7 +15,9 @@ text_replace(string, pattern = NULL, replacement = NULL, ...)
 
 \item{pattern}{regex to look for}
 
-\item{further}{parameter passed through to sub}
+\item{replacement}{replacement for pattern found}
+
+\item{...}{further parameter passed through to sub}
 }
 \description{
 replacing patterns in string

@@ -9,6 +9,13 @@ text_sub(string, start = NULL, end = NULL)
 
 \method{text_sub}{default}(string, start = NULL, end = NULL)
 }
+\arguments{
+\item{string}{text from which to extract character sequence}
+
+\item{start}{first character position}
+
+\item{end}{last character position}
+}
 \description{
 generic for extracting characters sequences by position
 

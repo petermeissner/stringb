@@ -1,5 +1,8 @@
 #' generic for extracting characters sequences by position
 #'
+#' @param string text from which to extract character sequence
+#' @param start first character position
+#' @param end  last character position
 #' @seealso \link{text_snippet}
 #' @export
 text_sub <- function(string, start=NULL, end = NULL){
