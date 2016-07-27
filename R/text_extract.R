@@ -8,6 +8,7 @@
 #' @param perl see \link{grep}
 #' @param fixed see \link{grep}
 #' @param useBytes see \link{grep}
+#' @param invert if TRUE non-regex-matches are extracted instead
 #' @export
 text_extract <-
   function(
@@ -16,7 +17,8 @@ text_extract <-
     ignore.case = FALSE,
     perl        = FALSE,
     fixed       = FALSE,
-    useBytes    = FALSE
+    useBytes    = FALSE,
+    invert      = FALSE
   ){
     regmatches(
       x,
@@ -27,9 +29,12 @@ text_extract <-
          perl        = perl,
          fixed       = fixed,
          useBytes    = useBytes
-       )
+       ),
+      invert = invert
     )
   }
+
+
 
 
 

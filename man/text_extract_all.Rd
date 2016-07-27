@@ -5,7 +5,7 @@
 \title{extract regex matches}
 \usage{
 text_extract_all(x, pattern, ignore.case = FALSE, perl = FALSE,
-  fixed = FALSE, useBytes = FALSE)
+  fixed = FALSE, useBytes = FALSE, invert = FALSE)
 }
 \arguments{
 \item{x}{text from which to extract}
@@ -19,6 +19,8 @@ text_extract_all(x, pattern, ignore.case = FALSE, perl = FALSE,
 \item{fixed}{see \link{grep}}
 
 \item{useBytes}{see \link{grep}}
+
+\item{invert}{if TRUE non-regex-matches are extracted instead}
 }
 \description{
 wrapper function around gregexec and regmatches

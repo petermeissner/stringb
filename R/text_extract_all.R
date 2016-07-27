@@ -8,25 +8,28 @@
 #' @param perl see \link{grep}
 #' @param fixed see \link{grep}
 #' @param useBytes see \link{grep}
+#' @param invert if TRUE non-regex-matches are extracted instead
 #' @export
 text_extract_all <-
   function(
     x,
     pattern,
     ignore.case = FALSE,
-    perl = FALSE,
-    fixed = FALSE,
-    useBytes = FALSE
+    perl        = FALSE,
+    fixed       = FALSE,
+    useBytes    = FALSE,
+    invert      = FALSE
   ){
     regmatches(
       x,
       gregexpr(
-        pattern=pattern,
-        text=x,
+        pattern     = pattern,
+        text        = x,
         ignore.case = ignore.case,
-        perl = perl,
-        fixed = fixed,
-        useBytes = useBytes
-      )
+        perl        = perl,
+        fixed       = fixed,
+        useBytes    = useBytes
+      ),
+      invert = invert
     )
   }
