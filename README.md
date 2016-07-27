@@ -75,6 +75,37 @@ devtools::install_github("petermeissner/stringb")
 library(stringb)
 ```
 
+## Function list
+
+
+```r
+library(stringb)
+objects("package:stringb")
+```
+
+```
+##  [1] "%..%"                   "%.%"                   
+##  [3] "text_c"                 "text_collapse"         
+##  [5] "text_count"             "text_delete"           
+##  [7] "text_detect"            "text_dup"              
+##  [9] "text_eval"              "text_extract"          
+## [11] "text_extract_all"       "text_extract_group"    
+## [13] "text_extract_group_all" "text_filter"           
+## [15] "text_grep"              "text_grepl"            
+## [17] "text_grepv"             "text_length"           
+## [19] "text_locate"            "text_locate_all"       
+## [21] "text_nchar"             "text_read"             
+## [23] "text_rep"               "text_replace"          
+## [25] "text_replace_all"       "text_replace_group"    
+## [27] "text_replace_group_all" "text_show"             
+## [29] "text_snippet"           "text_split"            
+## [31] "text_sub"               "text_subset"           
+## [33] "text_tokenize"          "text_tokenize_words"   
+## [35] "text_to_lower"          "text_to_title_case"    
+## [37] "text_to_upper"          "text_trim"             
+## [39] "text_which"             "text_which_value"      
+## [41] "text_write"
+```
 
     
 
@@ -91,11 +122,7 @@ library(stringb)
 ```
 
 ```r
-text_read(
-  test_file, 
-  tokenize = "\\W", 
-  n=20
-)[67:79]
+text_read( test_file, tokenize = "\\W", n=20)[67:79]
 ```
 
 ```
@@ -126,7 +153,7 @@ abline(v=which(friday_occurs))
 title("Friday Appearing in Robinson Crusoe")
 ```
 
-![](README_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 Text_detect() is another example for a streamlined interface (easier to remeber than grepl) with all base-R whistles and bells still beeing there - almost all base-R pattern matching functions have the ignore.case options to make pattern matching case insensitive. 
 

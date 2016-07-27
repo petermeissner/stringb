@@ -79,6 +79,12 @@ devtools::install_github("petermeissner/stringb")
 library(stringb)
 ```
 
+## Function list
+
+```{r}
+library(stringb)
+objects("package:stringb")
+```
 
     
 
@@ -88,11 +94,7 @@ library(stringb)
 library(stringb)
 (test_file <- stringb:::test_file("rc_1_ch1.txt")) # just a file accompanying the package to test things
 
-text_read(
-  test_file, 
-  tokenize = "\\W", 
-  n=20
-)[67:79]
+text_read( test_file, tokenize = "\\W", n=20)[67:79]
 ```
 
 Although, text_read() is just a wrapper araound readLines() it has become more powerful, consistent and streamlined by (1) always producing UTF-8 encoded character vectors, (2) allowing the usage of all readLines() options - e.g. n, (3) and adding further useful functionality like on-the-fly-tokenization.
