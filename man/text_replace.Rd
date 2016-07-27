@@ -8,7 +8,7 @@
 text_replace(string, pattern = NULL, replacement = NULL, ...)
 
 \method{text_replace}{default}(string, pattern = NULL, replacement = NULL,
-  ...)
+  recycle = FALSE, ...)
 }
 \arguments{
 \item{string}{text to be replaced}

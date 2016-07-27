@@ -1,9 +1,21 @@
-string      <- c("123","hubbuhhb", "hahhbahhbl")
-pattern     <- "(h+)(b+)"
-replacement <- "_2_"
-group       <- 2
-match       <- NULL
-invert      <- FALSE
+#' function for replacing regex group matches
+#' generic for getting regex group matches
+#'
+#' @param string text from which to extract character sequence
+#' @param pattern regex to be searched for
+#' @param ... further parameter passed through to \link[base]{regexec}
+#' @export
+text_replace_group <-
+  function(
+    string,
+    pattern,
+    replacement,
+    group=seq_along(replacement),
+    invert=FALSE,
+    ...
+){
+  UseMethod("text_replace_group")
+}
 
 #' text default
 #' @rdname text_replace_group
@@ -17,8 +29,8 @@ text_replace_group.default <-
     group=seq_along(replacement),
     invert=FALSE,
     ...
-  ){
-    tmp   <- regexec(pattern = pattern, text=string)
+){
+    tmp   <- regexpr(pattern = pattern, text=string)
     tmp   <- cleanup_regex_results(tmp)
     tmp   <- regmatches(string, tmp)
     found <- lapply(tmp, length)!=0
@@ -27,8 +39,18 @@ text_replace_group.default <-
     }
     rpl   <- lapply(tmp, text_collapse)
     text_replace(string, pattern, replacement = rpl, recycle = TRUE)
-  }
+}
 
+
+#' generic for getting all regex group matches
+#'
+#' @param string text from which to extract character sequence
+#' @param pattern regex to be searched for
+#' @param ... further parameter passed through to \link[base]{gregexpr}
+#' @export
+text_replace_group_all <- function(string, pattern, invert=FALSE, ...){
+  UseMethod("text_replace_group_all")
+}
 
 #' text default
 #' @rdname text_replace_group_all
@@ -57,4 +79,18 @@ text_replace_group_all.default <-
       res <- lapply(res, get_groups, group=group)
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

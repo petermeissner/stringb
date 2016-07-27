@@ -1,3 +1,53 @@
+#' helper function for text_replace_group
+#' @param x text_replace_group result
+#' @param groups groups to extract
+#' @keywords internal
+get_groups <- function(x, group){
+  groups <- text_c("group", group)
+  tmp <- list()
+  for(i in seq_along(groups) ){
+    if( is.null(x[[groups[i]]]) ){
+      tmp[[groups[i]]] <- rep(NA, dim(x)[1])
+    }else{
+      tmp[[groups[i]]] <- x[[groups[i]]]
+    }
+  }
+  tmp <- as.data.frame(tmp)
+  return(tmp)
+}
+
+#' helper function to standardize regexpr results
+#' @param tmp regexpr or gregexpr result
+#' @keywords internal
+text_locate_cleanup <- function(tmp){
+  tmp[tmp==-1] <- NA
+  tmp_length <- attr(tmp, "match.length")
+  tmp_length[tmp_length<0] <- NA
+  tmp_end <- ifelse(tmp_length==0, NA, tmp+tmp_length-1)
+  attributes(tmp) <- NULL
+  data.frame(
+    start  = tmp,
+    end    = tmp_end,
+    length = tmp_length
+  )
+}
+
+#' helper for usage of regmatches
+#' @param tmp result from regexec or gregexpr or regexpr
+#' @keywords internal
+cleanup_regex_results <-  function(tmp){
+  for(i in seq_along(tmp) ){
+    if( !tmp[[i]][1]==-1 ){
+      match_length <- attr(tmp[[i]], "match.length")
+      use_bytes    <- attr(tmp[[i]], "useBytes")
+      tmp[[i]]     <- tmp[[i]][-1]
+      attr(tmp[[i]], "match.length") <- match_length[-1]
+      attr(tmp[[i]], "useBytes")     <- use_bytes
+    }
+  }
+  tmp
+}
+
 #' a stringsAsFactors=FALSE data.frame
 #' @param ... passed through to data.frame
 #' @param stringsAsFactors set to false by default

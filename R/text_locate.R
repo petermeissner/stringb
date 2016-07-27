@@ -1,18 +1,3 @@
-#' helper function to standardize regexpr results
-#' @param tmp regexpr or gregexpr result
-text_locate_cleanup <- function(tmp){
-  tmp[tmp==-1] <- NA
-  tmp_length <- attr(tmp, "match.length")
-  tmp_length[tmp_length<0] <- NA
-  tmp_end <- ifelse(tmp_length==0, NA, tmp+tmp_length-1)
-  attributes(tmp) <- NULL
-  data.frame(
-    start  = tmp,
-    end    = tmp_end,
-    length = tmp_length
-  )
-}
-
 #' helper function to get start, end, length form pattern match
 #' @param string text to be searched through
 #' @param pattern regex to look for

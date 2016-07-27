@@ -12,10 +12,14 @@ text_replace <- function(string, pattern=NULL, replacement=NULL, ...){
 #' @rdname text_replace
 #' @method text_replace default
 #' @export
-text_replace.default <- function(string, pattern=NULL, replacement=NULL, ...){
-  sub(pattern=pattern, replacement=replacement, x=string, ...)
-}
-
+text_replace.default <-
+  function(string, pattern=NULL, replacement=NULL, recycle=FALSE, ...){
+    if( (length(pattern) > 1 | length(replacement) > 1) & recycle ){
+      mapply(sub, x=string, pattern=pattern, replacement=replacement, ..., USE.NAMES = FALSE)
+    }else{
+      sub(pattern=pattern, replacement=replacement, x=string, ...)
+    }
+  }
 
 
 #' replacing patterns in string
@@ -32,8 +36,13 @@ text_replace_all <- function(string, pattern=NULL, replacement=NULL, ...){
 #' @rdname text_replace_all
 #' @method text_replace_all default
 #' @export
-text_replace_all.default <- function(string, pattern=NULL, replacement=NULL, ...){
-  gsub(pattern=pattern, replacement=replacement, x=string, ...)
+text_replace_all.default <-
+  function(string, pattern=NULL, replacement=NULL, recycle=FALSE, ...){
+    if( (length(pattern) > 1 | length(replacement) > 1) & recycle ){
+      mapply(gsub, x=string, pattern=pattern, replacement=replacement, ..., USE.NAMES = FALSE)
+    }else{
+      gsub(pattern=pattern, replacement=replacement, x=string, ...)
+    }
 }
 
 
