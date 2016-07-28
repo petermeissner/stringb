@@ -29,13 +29,13 @@ Base R already ships with string handling capabilities
 
 This packages aims at: 
 
-- keeping dependencies on other packages low
+- **no dependencies** except what comes with base-R
 - closing the gap between base R string handling and **convenience**
-- providing functions that allow for different character encodings 
-- but rigorously defaulting to **UTF-8** as expected input and default output 
-  therby enhancing cross platform cooperation
-- writing text handling functions as **generics** so that methods for all kind of 
+- writing **text handling functions as generics** so that methods for all kind of 
   structures containing text can be added 
+- providing functions that allow for different character encodings 
+- but rigorously defaulting to UTF-8 as expected input and default output 
+  therby enhancing cross platform cooperation
 - adding more power to general basic text handling functions by additional 
   options (e.g. the text_read() function allows to read in and tokenize text in 
   one function call)
@@ -94,17 +94,17 @@ objects("package:stringb")
 ## [15] "text_grep"              "text_grepl"            
 ## [17] "text_grepv"             "text_length"           
 ## [19] "text_locate"            "text_locate_all"       
-## [21] "text_nchar"             "text_read"             
-## [23] "text_rep"               "text_replace"          
-## [25] "text_replace_all"       "text_replace_group"    
-## [27] "text_replace_group_all" "text_show"             
-## [29] "text_snippet"           "text_split"            
-## [31] "text_sub"               "text_subset"           
-## [33] "text_tokenize"          "text_tokenize_words"   
-## [35] "text_to_lower"          "text_to_title_case"    
-## [37] "text_to_upper"          "text_trim"             
-## [39] "text_which"             "text_which_value"      
-## [41] "text_write"
+## [21] "text_locate_group"      "text_nchar"            
+## [23] "text_read"              "text_rep"              
+## [25] "text_replace"           "text_replace_all"      
+## [27] "text_replace_group"     "text_replace_locates"  
+## [29] "text_show"              "text_snippet"          
+## [31] "text_split"             "text_sub"              
+## [33] "text_subset"            "text_tokenize"         
+## [35] "text_tokenize_words"    "text_to_lower"         
+## [37] "text_to_title_case"     "text_to_upper"         
+## [39] "text_trim"              "text_which"            
+## [41] "text_which_value"       "text_write"
 ```
 
     

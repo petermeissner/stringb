@@ -34,13 +34,13 @@ Base R already ships with string handling capabilities
 
 This packages aims at: 
 
-- keeping dependencies on other packages low
+- **no dependencies** except what comes with base-R
 - closing the gap between base R string handling and **convenience**
-- providing functions that allow for different character encodings 
-- but rigorously defaulting to **UTF-8** as expected input and default output 
-  therby enhancing cross platform cooperation
-- writing text handling functions as **generics** so that methods for all kind of 
+- writing **text handling functions as generics** so that methods for all kind of 
   structures containing text can be added 
+- providing functions that allow for different character encodings 
+- but rigorously defaulting to UTF-8 as expected input and default output 
+  therby enhancing cross platform cooperation
 - adding more power to general basic text handling functions by additional 
   options (e.g. the text_read() function allows to read in and tokenize text in 
   one function call)
