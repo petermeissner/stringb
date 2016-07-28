@@ -2,6 +2,32 @@ NEWS stringb
 ==========================================================================
 
 
+version 0.1.8 [2016-07-28 ...] 
+--------------------------------------------------------------------------
+
+* BUGFIXES
+
+    
+* FEATURE
+    - text_wrap()
+    - text_pad()
+
+    
+* DEVELOPMENT
+    - test : text_c()
+    - test : text_collapse()
+    - test : text_which() 
+    - test : text_subset() 
+    - test : text_filter()
+    - test : text_which_value()
+    - test : text_grep()
+    - test : text_grepv()
+    - test : text_grepl()
+    - test : text_eval()
+    - text : text_to_lower()
+    
+    
+
 version 0.1.7 [2016-07-26 ...] 
 --------------------------------------------------------------------------
 

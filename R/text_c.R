@@ -16,7 +16,7 @@ text_c <- function(..., sep="", coll=NULL){
 #' @method text_c default
 #' @export
 text_c.default <- function(..., sep="", coll=NULL){
-  paste(..., sep=sep, coll=coll)
+  paste(..., sep=sep, collapse=coll)
 }
 
 #' concatenating strings operator
