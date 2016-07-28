@@ -10,12 +10,21 @@ text_replace_group(string, pattern, replacement,
   group = seq_along(replacement), invert = FALSE, ...)
 
 \method{text_replace_group}{default}(string, pattern, replacement,
-  group = seq_along(replacement), invert = FALSE, ...)
+  group = TRUE, invert = FALSE, ...)
 }
 \arguments{
 \item{string}{text from which to extract character sequence}
 
 \item{pattern}{regex to be searched for}
+
+\item{replacement}{character vector of replacements of length 1 or
+length(group) to replace regex group matches (marked character spans
+provided by the found parameter)}
+
+\item{group}{vector of integers identifying thos regex groups to be replaced}
+
+\item{invert}{should character spans provided by found or their counterparts
+be replaced}
 
 \item{...}{further parameter passed through to \link[base]{regexec}}
 }
@@ -23,6 +32,6 @@ text_replace_group(string, pattern, replacement,
 function for replacing regex group matches
 generic for getting regex group matches
 
-text default
+text_replace_group default
 }
 

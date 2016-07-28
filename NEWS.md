@@ -9,15 +9,18 @@ version 0.1.7 [2016-07-26 ...]
 
     
 * FEATURE
-    - str_match()
-    - str_match_all()
-    - str_pad()
-    - str_wrap()
-    - str_extract() and str_extract_all() got invert parameter
+    - text_extract_group()
+    - text_replace_group()
+    - text_locate_group()
+    - text_replace_locates()
+    - text_extract() and text_extract_all() got invert parameter
 
     
 * DEVELOPMENT
-    
+    - helper : drop_non_group_matches()
+    - helper : regmatches2()
+    - helper : sequenize()
+    - helper : de_sequenize()
     
 
 

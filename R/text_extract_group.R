@@ -2,9 +2,11 @@
 #'
 #' @param string text from which to extract character sequence
 #' @param pattern regex to be searched for
+#' @param group integer vector to indicate those regex group matches to extract
+#' @param invert whether or no matches or non-matches should be extracted
 #' @param ... further parameter passed through to \link[base]{regexec}
 #' @export
-text_extract_group <- function(string, pattern, invert=FALSE, ...){
+text_extract_group <- function(string, pattern, group, invert=FALSE, ...){
   UseMethod("text_extract_group")
 }
 
@@ -66,9 +68,11 @@ get_groups <- function(x, group){
 #'
 #' @param string text from which to extract character sequence
 #' @param pattern regex to be searched for
+#' @param invert whether or no matches or non-matches should be extracted
 #' @param ... further parameter passed through to \link[base]{gregexpr}
+#' @param group integer vector to indicate those regex group matches to extract
 #' @export
-text_extract_group_all <- function(string, pattern, invert=FALSE, ...){
+text_extract_group_all <- function(string, pattern, group=NULL, invert=FALSE, ...){
   UseMethod("text_extract_group_all")
 }
 
@@ -77,7 +81,7 @@ text_extract_group_all <- function(string, pattern, invert=FALSE, ...){
 #' @method text_extract_group_all default
 #' @export
 text_extract_group_all.default <-
-  function(string, pattern, group=NULL, match=NULL, invert=FALSE, ...){
+  function(string, pattern, group=NULL, invert=FALSE, ...){
   snippets <- text_extract_all(string, pattern)
   groups   <- lapply(snippets, regexec, pattern=pattern)
   res      <- mapply(regmatches, m=groups, x=snippets)
@@ -98,6 +102,7 @@ text_extract_group_all.default <-
   if(!is.null(group)){
     res <- lapply(res, get_groups, group=group)
   }
+  return(res)
 }
 
 

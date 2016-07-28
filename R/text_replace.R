@@ -2,6 +2,7 @@
 #' @param string text to be replaced
 #' @param pattern regex to look for
 #' @param replacement replacement for pattern found
+#' @param recycle should arguments be recycled if lengths do not match?
 #' @param ... further parameter passed through to sub
 #' @export
 text_replace <- function(string, pattern=NULL, replacement=NULL, ...){
@@ -26,6 +27,7 @@ text_replace.default <-
 #' @param string text to be replaced
 #' @param pattern regex to look for
 #' @param replacement replacement for pattern found
+#' @param recycle should arguments be recycled if lengths do not match?
 #' @param ... further parameter passed through to gsub
 #' @export
 text_replace_all <- function(string, pattern=NULL, replacement=NULL, ...){

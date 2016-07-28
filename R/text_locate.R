@@ -4,7 +4,7 @@
 #' @param ... further options passed through to \link[base]{regexpr}
 text_locate_worker <- function(string, pattern, ...){
   tmp <- regexpr(pattern, string, ...)
-  text_locate_cleanup(tmp)
+  regmatches2(tmp)
 }
 
 #' function to get start, end, length form pattern match
@@ -68,7 +68,7 @@ text_locate.default <- function(string, pattern, vectorize=FALSE, ...){
 #' @param ... further options passed through to \link[base]{regexpr}
 text_locate_all_worker <- function(string, pattern, ...){
   tmp <- gregexpr(pattern, string, ...)
-  lapply(tmp, text_locate_cleanup)
+  lapply(tmp, regmatches2)
 }
 
 #' function to get start, end, length form pattern match for all matches

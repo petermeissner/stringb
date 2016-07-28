@@ -18,6 +18,8 @@ text_replace(string, pattern = NULL, replacement = NULL, ...)
 \item{replacement}{replacement for pattern found}
 
 \item{...}{further parameter passed through to sub}
+
+\item{recycle}{should arguments be recycled if lengths do not match?}
 }
 \description{
 replacing patterns in string

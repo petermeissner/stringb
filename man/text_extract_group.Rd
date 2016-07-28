@@ -5,7 +5,7 @@
 \alias{text_extract_group.default}
 \title{generic for getting regex group matches}
 \usage{
-text_extract_group(string, pattern, invert = FALSE, ...)
+text_extract_group(string, pattern, group, invert = FALSE, ...)
 
 \method{text_extract_group}{default}(string, pattern, group = NULL,
   invert = FALSE, ...)
@@ -14,6 +14,10 @@ text_extract_group(string, pattern, invert = FALSE, ...)
 \item{string}{text from which to extract character sequence}
 
 \item{pattern}{regex to be searched for}
+
+\item{group}{integer vector to indicate those regex group matches to extract}
+
+\item{invert}{whether or no matches or non-matches should be extracted}
 
 \item{...}{further parameter passed through to \link[base]{regexec}}
 }

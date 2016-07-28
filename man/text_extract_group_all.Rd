@@ -5,15 +5,19 @@
 \alias{text_extract_group_all.default}
 \title{generic for getting all regex group matches}
 \usage{
-text_extract_group_all(string, pattern, invert = FALSE, ...)
+text_extract_group_all(string, pattern, group = NULL, invert = FALSE, ...)
 
 \method{text_extract_group_all}{default}(string, pattern, group = NULL,
-  match = NULL, invert = FALSE, ...)
+  invert = FALSE, ...)
 }
 \arguments{
 \item{string}{text from which to extract character sequence}
 
 \item{pattern}{regex to be searched for}
+
+\item{group}{integer vector to indicate those regex group matches to extract}
+
+\item{invert}{whether or no matches or non-matches should be extracted}
 
 \item{...}{further parameter passed through to \link[base]{gregexpr}}
 }

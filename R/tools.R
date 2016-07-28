@@ -1,3 +1,43 @@
+#' helper function to spans into sequences
+#' @param start first number of sequence
+#' @param end last number of sequence
+#' @param simplify discard order, duplicaes etc?
+#' @keywords internal
+sequenize <- function(start, end=NULL, simplify=TRUE){
+  if( is.null(end) ){
+    if(is.matrix(start)){
+      end   <- start[,2]
+      start <- start[,1]
+    }else{
+      end   <- start[[2]]
+      start <- start[[1]]
+    }
+  }
+  tmp <- mapply(seq, start, end)
+  if(simplify){
+    tmp <- sort(unique(unlist(tmp)))
+  }
+  return(tmp)
+}
+
+
+
+#' helper function to transforms sequences into spans
+#' @param x a bunch of numbers to urn into sequences
+#' @keywords internal
+de_sequenize <- function(x){
+  x <- sort(unique(unlist(x)))
+  xmin  <- min(x)
+  xlead <- x[-1]
+  xdiff <- c(xlead, NA) - x
+  iffer <- is.na(xdiff) | xdiff > 1
+  end   <- x[iffer]
+  start <- c( xmin, xlead[iffer[seq_len(length(iffer)-1)]] )
+  return(data.frame(start, end))
+}
+
+
+
 #' helper function for text_replace_group
 #' @param x text_replace_group result
 #' @param groups groups to extract
@@ -19,29 +59,32 @@ get_groups <- function(x, group){
 #' helper function to standardize regexpr results
 #' @param tmp regexpr or gregexpr result
 #' @keywords internal
-text_locate_cleanup <- function(tmp){
-  tmp[tmp==-1] <- NA
-  tmp_length <- attr(tmp, "match.length")
-  tmp_length[tmp_length<0] <- NA
-  tmp_end <- ifelse(tmp_length==0, NA, tmp+tmp_length-1)
-  attributes(tmp) <- NULL
-  data.frame(
-    start  = tmp,
-    end    = tmp_end,
-    length = tmp_length
-  )
+regmatches2 <- function(tmp, group=TRUE){
+  if(is.list(tmp)){
+    return(lapply(tmp, regmatches2, group=group))
+  }
+  # make data frame of match positions
+  start            <- tmp
+  start[start==-1] <- NA
+  length               <- attr(start, "match.length")
+  length[ length < 0]  <- NA
+  end <- ifelse( length == 0, NA, start + length-1 )
+  attributes(start) <- NULL
+  df <- data.frame(start, end, length)
+  # return
+  return(df[group,])
 }
 
 #' helper for usage of regmatches
 #' @param tmp result from regexec or gregexpr or regexpr
 #' @keywords internal
-cleanup_regex_results <-  function(tmp){
+drop_non_group_matches <-  function(tmp, group=TRUE){
   for(i in seq_along(tmp) ){
     if( !tmp[[i]][1]==-1 ){
       match_length <- attr(tmp[[i]], "match.length")
       use_bytes    <- attr(tmp[[i]], "useBytes")
-      tmp[[i]]     <- tmp[[i]][-1]
-      attr(tmp[[i]], "match.length") <- match_length[-1]
+      tmp[[i]]     <- tmp[[i]][-1][group]
+      attr(tmp[[i]], "match.length") <- match_length[-1][group]
       attr(tmp[[i]], "useBytes")     <- use_bytes
     }
   }
@@ -95,23 +138,6 @@ test_file <- function(x=NULL){
   }
 }
 
-
-# #' have a look at environments
-# #' @param env environment list objects
-# #' @param filter filter for classes to be returned
-# #' @export
-# stringb_ls <- function(env = globalenv(), filter=FALSE){
-#   names <- as.list(ls(env))
-#   worker <- function(name){
-#     data.frame(name, class=class(get(name, envir=env)))
-#   }
-#   tmp <- do.call(rbind, lapply(names, worker))
-#   if(filter!=FALSE){
-#     tmp[tmp$class %in% filter,]
-#   }else{
-#     return(tmp)
-#   }
-# }
 
 
 
