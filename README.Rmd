@@ -35,7 +35,6 @@ Base R already ships with string handling capabilities
 This packages aims at: 
 
 - **no dependencies** except what comes with base-R
-- closing the gap between base R string handling and **convenience**
 - writing **text handling functions as generics** so that methods for all kind of 
   structures containing text can be added 
 - providing functions that allow for different character encodings 
