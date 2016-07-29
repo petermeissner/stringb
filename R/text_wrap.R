@@ -2,8 +2,9 @@
 #'
 #' @param string text to be wrapped
 #' @param ... further arguments passed through to \link[base]{strwrap}
+#' @seealso \link[base]{strwrap}
 #' @export
-text_wrap = function(x, wrap=TRUE, ...){
+text_wrap = function(string, ...){
   UseMethod("text_wrap")
 }
 

@@ -4,8 +4,11 @@ context("text_dup test_rep")
 test_that("text_dup text_rep", {
   expect_true({
     all(
-      text_dup(letters[1:2])==c("a","b")
+      text_dup(letters[1:2],1)==c("a","b")
     )
+  })
+  expect_error({
+      text_dup(letters[1:2])
   })
   expect_true({
     all(

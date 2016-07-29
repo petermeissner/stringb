@@ -14,7 +14,11 @@ text_pad(string, width = max(nchar(string)), pad = " ", side = c("left",
 \arguments{
 \item{string}{text to be wrapped}
 
-\item{...}{further arguments passed through to \link[base]{strwrap}}
+\item{width}{width text should have after padding; defaults to: max(nchar(string))}
+
+\item{pad}{the character or character sequence to use for padding}
+
+\item{side}{one of: c("left", "right", "both", "l", "r", "b", 1, 2, 3)}
 }
 \description{
 padding text to specified width

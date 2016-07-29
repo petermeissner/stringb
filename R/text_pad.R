@@ -1,7 +1,9 @@
 #' padding text to specified width
 #'
 #' @param string text to be wrapped
-#' @param ... further arguments passed through to \link[base]{strwrap}
+#' @param width width text should have after padding; defaults to: max(nchar(string))
+#' @param pad the character or character sequence to use for padding
+#' @param side one of: c("left", "right", "both", "l", "r", "b", 1, 2, 3)
 #' @export
 text_pad <-
   function(

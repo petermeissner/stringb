@@ -5,18 +5,21 @@
 \alias{text_wrap.default}
 \title{wraping text to specified width}
 \usage{
-text_wrap(x, wrap = TRUE, ...)
+text_wrap(string, ...)
 
 \method{text_wrap}{default}(string, ...)
 }
 \arguments{
-\item{...}{further arguments passed through to \link[base]{strwrap}}
-
 \item{string}{text to be wrapped}
+
+\item{...}{further arguments passed through to \link[base]{strwrap}}
 }
 \description{
 wraping text to specified width
 
 text_wrap default
+}
+\seealso{
+\link[base]{strwrap}
 }
 
