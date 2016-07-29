@@ -24,10 +24,14 @@ text_dup <- function(string, times, vectorize=FALSE, ...){
 #' @method text_rep default
 #' @export
 text_rep.default <- function(string, times, vectorize=FALSE, ...){
+  # list handling
   if(is.list(string)){
     tmp  <- lapply(string, text_rep, times=times, vectorize=vectorize, ...)
     return(tmp)
   }
+  # sanatize input
+  times[times<0] <- 0
+  # doing duty-to-do
   if(vectorize){
     tmp <- mapply(text_rep, string, times)
     names(tmp) <- NULL
@@ -45,10 +49,7 @@ text_rep.default <- function(string, times, vectorize=FALSE, ...){
     tmp <-
       vapply(
         X   = string,
-        FUN =
-          function(string, times){
-            paste0(rep(string, times), collapse="")
-          },
+        FUN = strrep,
         FUN.VALUE = "",
         times = times
       )

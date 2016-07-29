@@ -46,3 +46,35 @@ text_split.default <- function(string, pattern, vectorize=FALSE, ...){
 }
 
 
+#' generic splitting strings into pieces of length n
+#' @param string text to search through
+#' @param n length of pieces
+#' @param vectorize should function be used in vectorized mode, i.e. should a
+#'    pattern with length larger than 1 be allowed and if so, should it be
+#'    matched to lines (with recycling if needed) instead of using on element on
+#'    all lines
+#' @export
+text_split_n <- function(string, n, vectorize=FALSE){
+  UseMethod("text_split_n")
+}
+
+#' text_split_n defaul method
+#' @rdname text_split_n
+#' @method text_split_n default
+#' @export
+text_split_n.default <- function(string, n, vectorize=FALSE){
+  if(!vectorize & length(n)>1){
+    warning("text_split : length of pattern > 1, only first element will be used")
+    n <- n[1]
+  }
+  if(vectorize){
+    splits <- mapply(text_split_n, n=n, string=string)
+    return(splits)
+  }else{
+    splits <- gregexpr(text_c(".{0,",n,"}"), string)
+    splits <- regmatches(string, splits)
+    return(splits)
+  }
+}
+
+

@@ -11,6 +11,7 @@ version 0.1.8 [2016-07-28 ...]
 * FEATURE
     - text_wrap()
     - text_pad()
+    - text_split_n()
 
     
 * DEVELOPMENT
@@ -24,7 +25,7 @@ version 0.1.8 [2016-07-28 ...]
     - test : text_grepv()
     - test : text_grepl()
     - test : text_eval()
-    - text : text_to_lower()
+    - test : text_to_lower()
     
     
 
