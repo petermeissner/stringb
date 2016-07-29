@@ -94,16 +94,18 @@ objects("package:stringb")
 ## [17] "text_grepv"             "text_length"           
 ## [19] "text_locate"            "text_locate_all"       
 ## [21] "text_locate_group"      "text_nchar"            
-## [23] "text_read"              "text_rep"              
-## [25] "text_replace"           "text_replace_all"      
-## [27] "text_replace_group"     "text_replace_locates"  
-## [29] "text_show"              "text_snippet"          
-## [31] "text_split"             "text_sub"              
-## [33] "text_subset"            "text_tokenize"         
-## [35] "text_tokenize_words"    "text_to_lower"         
-## [37] "text_to_title_case"     "text_to_upper"         
-## [39] "text_trim"              "text_which"            
-## [41] "text_which_value"       "text_write"
+## [23] "text_pad"               "text_read"             
+## [25] "text_rep"               "text_replace"          
+## [27] "text_replace_all"       "text_replace_group"    
+## [29] "text_replace_locates"   "text_show"             
+## [31] "text_snippet"           "text_split"            
+## [33] "text_split_n"           "text_sub"              
+## [35] "text_subset"            "text_tokenize"         
+## [37] "text_tokenize_words"    "text_to_lower"         
+## [39] "text_to_title_case"     "text_to_upper"         
+## [41] "text_trim"              "text_which"            
+## [43] "text_which_value"       "text_wrap"             
+## [45] "text_write"
 ```
 
     
@@ -156,6 +158,26 @@ title("Friday Appearing in Robinson Crusoe")
 
 Text_detect() is another example for a streamlined interface (easier to remeber than grepl) with all base-R whistles and bells still beeing there - almost all base-R pattern matching functions have the ignore.case options to make pattern matching case insensitive. 
 
+
+
+```r
+library(stringb)
+(test_file <- stringb:::test_file("rc_3.txt")) # just a file accompanying the package to test things
+```
+
+```
+## [1] "/home/peter/R/x86_64-pc-linux-gnu-library/3.3/stringb/testfiles/rc_3.txt"
+```
+
+```r
+text          <- text_read(test_file)
+
+plot(text, pattern="Friday", ignore.case=TRUE)
+```
+
+![](README_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+A simple method to plot character vectors with pattern markup was added as well. 
     
     
     
