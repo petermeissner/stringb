@@ -33,8 +33,11 @@ text_rep.default <- function(string, times, vectorize=FALSE, ...){
   times[times<0] <- 0
   # doing duty-to-do
   if(vectorize){
-    tmp <- mapply(text_rep, string, times)
-    names(tmp) <- NULL
+    # text
+    tmp           <- mapply(text_rep, string, times)
+    Encoding(tmp) <- "UTF-8"
+    names(tmp)    <- NULL
+    # data
     tomp <-
       as.data.frame(
         do.call(
@@ -42,6 +45,7 @@ text_rep.default <- function(string, times, vectorize=FALSE, ...){
           mapply(c,i=seq_along(string), p=seq_along(times), SIMPLIFY = FALSE)
         )
       )
+    # return
     tmp <- data.frame(t=tmp, i=tomp$i, p=tomp$p)
     rownames(tmp) <- NULL
     return(tmp)
@@ -53,6 +57,7 @@ text_rep.default <- function(string, times, vectorize=FALSE, ...){
         FUN.VALUE = "",
         times = times
       )
+    Encoding(tmp) <- "UTF-8"
     return(tmp)
   }
 }
