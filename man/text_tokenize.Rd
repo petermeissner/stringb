@@ -3,16 +3,12 @@
 \name{text_tokenize}
 \alias{text_tokenize}
 \alias{text_tokenize.default}
-\alias{text_tokenize.rtext}
 \title{generic for gregexpr wrappers to tokenize text}
 \usage{
 text_tokenize(x, regex = NULL, ignore.case = FALSE, fixed = FALSE,
   perl = FALSE, useBytes = FALSE, non_token = FALSE)
 
 \method{text_tokenize}{default}(x, regex = NULL, ignore.case = FALSE,
-  fixed = FALSE, perl = FALSE, useBytes = FALSE, non_token = FALSE)
-
-\method{text_tokenize}{rtext}(x, regex = NULL, ignore.case = FALSE,
   fixed = FALSE, perl = FALSE, useBytes = FALSE, non_token = FALSE)
 }
 \arguments{
@@ -48,7 +44,5 @@ data.frame,
 generic for gregexpr wrappers to tokenize text
 
 default method for text_tokenize generic
-
-function tokenizing rtext objects
 }
 

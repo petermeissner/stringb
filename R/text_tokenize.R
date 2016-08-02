@@ -139,36 +139,7 @@ text_tokenize.default <-
     }
   }
 
-#' function tokenizing rtext objects
-#' @method text_tokenize rtext
-#' @rdname text_tokenize
-#' @export
-text_tokenize.rtext <-   function(
-  x,
-  regex       = NULL,
-  ignore.case = FALSE,
-  fixed       = FALSE,
-  perl        = FALSE,
-  useBytes    = FALSE,
-  non_token   = FALSE
-){
-  tmp <-
-    text_tokenize(
-      x$text_get(),
-      regex       = regex,
-      ignore.case = ignore.case,
-      fixed       = fixed,
-      perl        = perl,
-      useBytes    = useBytes,
-      non_token   = non_token
-    )
-    tmp <-
-      stringb_arrange(tmp, "from","to")
-    return(tmp)
-}
-
-
-#' tokenize text into words
+#' generic to tokenize text into words
 #'
 #' A wrapper to text_tokenize that tokenizes text into words.
 #' Since using text_tokenize()'s option non_token might slow things
@@ -178,7 +149,15 @@ text_tokenize.rtext <-   function(
 #' @param x the text to be tokenized
 #' @param non_token whether or not token as well as non tokens shall be returned.
 #' @export
-text_tokenize_words <-
+text_tokenize_words <- function(string, non_token = FALSE){
+  UseMethod("text_tokenize_words")
+}
+
+#' text_tokenize default
+#' @rdname text_tokenize_words
+#' @method text_tokenize default
+#' @export
+text_tokenize_words.default <-
   function(
     x,
     non_token = FALSE

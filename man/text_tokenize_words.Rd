@@ -2,19 +2,24 @@
 % Please edit documentation in R/text_tokenize.R
 \name{text_tokenize_words}
 \alias{text_tokenize_words}
-\title{tokenize text into words}
+\alias{text_tokenize_words.default}
+\title{generic to tokenize text into words}
 \usage{
-text_tokenize_words(x, non_token = FALSE)
+text_tokenize_words(string, non_token = FALSE)
+
+\method{text_tokenize}{default}(x, non_token = FALSE)
 }
 \arguments{
-\item{x}{the text to be tokenized}
-
 \item{non_token}{whether or not token as well as non tokens shall be returned.}
+
+\item{x}{the text to be tokenized}
 }
 \description{
 A wrapper to text_tokenize that tokenizes text into words.
 Since using text_tokenize()'s option non_token might slow things
 down considerably this one purpose wrapper is a little more clever
 than the general implementation and hence much faster.
+
+text_tokenize default
 }
 
