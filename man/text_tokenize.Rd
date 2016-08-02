@@ -5,14 +5,14 @@
 \alias{text_tokenize.default}
 \title{generic for gregexpr wrappers to tokenize text}
 \usage{
-text_tokenize(x, regex = NULL, ignore.case = FALSE, fixed = FALSE,
+text_tokenize(string, regex = NULL, ignore.case = FALSE, fixed = FALSE,
   perl = FALSE, useBytes = FALSE, non_token = FALSE)
 
-\method{text_tokenize}{default}(x, regex = NULL, ignore.case = FALSE,
+\method{text_tokenize}{default}(string, regex = NULL, ignore.case = FALSE,
   fixed = FALSE, perl = FALSE, useBytes = FALSE, non_token = FALSE)
 }
 \arguments{
-\item{x}{x object to be tokenized}
+\item{string}{text to be tokenized}
 
 \item{regex}{regex expressing where to cut see (see \link[base]{gregexpr})}
 
@@ -30,15 +30,6 @@ expression (see \link[base]{gregexpr})}
 
 \item{non_token}{should information for non-token, i.e. those patterns by
 which the text was splitted, be returned as well}
-}
-\value{
-data.frame,
-   token: string of the token;
-   from: position in text at which token starts;
-   to: position in text at which the token ends
-   length: length of the token;
-   type: type of the token, either its matched by regular expression used
-   for tokenization or not matched
 }
 \description{
 generic for gregexpr wrappers to tokenize text

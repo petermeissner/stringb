@@ -1,5 +1,5 @@
 #' generic for gregexpr wrappers to tokenize text
-#' @param x x object to be tokenized
+#' @param string text to be tokenized
 #' @param regex regex expressing where to cut see (see \link[base]{gregexpr})
 #' @param ignore.case whether or not reges should be case sensitive
 #'    (see \link[base]{gregexpr})
@@ -13,7 +13,7 @@
 #'    which the text was splitted, be returned as well
 #' @export
 text_tokenize <- function (
-   x,
+   string,
    regex       = NULL,
    ignore.case = FALSE,
    fixed       = FALSE,
@@ -27,17 +27,10 @@ text_tokenize <- function (
 #' default method for text_tokenize generic
 #' @rdname text_tokenize
 #' @method text_tokenize default
-#' @return data.frame,
-#'    token: string of the token;
-#'    from: position in text at which token starts;
-#'    to: position in text at which the token ends
-#'    length: length of the token;
-#'    type: type of the token, either its matched by regular expression used
-#'    for tokenization or not matched
 #' @export
 text_tokenize.default <-
   function(
-    x,
+    string,
     regex       = NULL,
     ignore.case = FALSE,
     fixed       = FALSE,
@@ -46,9 +39,9 @@ text_tokenize.default <-
     non_token   = FALSE
   ){
     # recursion
-    if(length(x)>1){
+    if(length(string)>1){
       lapply(
-        x,
+        string,
         text_tokenize,
         regex       = regex,
         ignore.case = ignore.case,
@@ -60,7 +53,7 @@ text_tokenize.default <-
     }else{
       # special cases
       if( any(grepl(regex, "")==TRUE) ){
-        tmp <- strsplit(x, regex)[[1]]
+        tmp <- strsplit(string, regex)[[1]]
         token <- data.frame(
           from     = seq_along(tmp),
           to       = seq_along(tmp),
@@ -73,8 +66,8 @@ text_tokenize.default <-
         regex <- ".*"
       }
       # finding characters spans where to split
-      tlength <- text_length(x)
-      found_splitter        <- gregexpr(regex, x, ignore.case, fixed, useBytes)
+      tlength <- text_length(string)
+      found_splitter        <- gregexpr(regex, string, ignore.case, fixed, useBytes)
       found_splitter_from   <- found_splitter[[1]]
       found_splitter_length <- attributes(found_splitter[[1]])$match.length
       found_splitter_to     <- found_splitter_length+found_splitter_from-1
@@ -109,7 +102,7 @@ text_tokenize.default <-
       }
 
       # filling with tokens
-      tmp <- unlist(strsplit(x, regex))
+      tmp <- unlist(strsplit(string, regex))
       tmp <- tmp[tmp!=""]
 
       token$token    <- tmp[seq_along(token$from)]
@@ -127,7 +120,7 @@ text_tokenize.default <-
           data.frame(
             from     = found_splitter_from,
             to       = found_splitter_to,
-            token    = regmatches(x, found_splitter)[[1]],
+            token    = regmatches(string, found_splitter)[[1]],
             is_token = rep(FALSE, length(found_splitter_to))
           )
         token <-
@@ -146,7 +139,7 @@ text_tokenize.default <-
 #' down considerably this one purpose wrapper is a little more clever
 #' than the general implementation and hence much faster.
 #'
-#' @param x the text to be tokenized
+#' @param string the text to be tokenized
 #' @param non_token whether or not token as well as non tokens shall be returned.
 #' @export
 text_tokenize_words <- function(string, non_token = FALSE){
@@ -155,16 +148,16 @@ text_tokenize_words <- function(string, non_token = FALSE){
 
 #' text_tokenize default
 #' @rdname text_tokenize_words
-#' @method text_tokenize default
+#' @method text_tokenize_words default
 #' @export
 text_tokenize_words.default <-
   function(
-    x,
+    string,
     non_token = FALSE
   ){
-    res <- text_tokenize(x, "\\W+")
+    res <- text_tokenize(string, "\\W+")
     if(non_token){
-      tmp <- text_tokenize(x, "\\w+")
+      tmp <- text_tokenize(string, "\\w+")
       tmp$is_token <- rep(FALSE, dim(tmp)[1])
       res <- rbind(res, tmp)
     }

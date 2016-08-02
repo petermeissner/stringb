@@ -7,12 +7,12 @@
 \usage{
 text_tokenize_words(string, non_token = FALSE)
 
-\method{text_tokenize}{default}(x, non_token = FALSE)
+\method{text_tokenize_words}{default}(string, non_token = FALSE)
 }
 \arguments{
-\item{non_token}{whether or not token as well as non tokens shall be returned.}
+\item{string}{the text to be tokenized}
 
-\item{x}{the text to be tokenized}
+\item{non_token}{whether or not token as well as non tokens shall be returned.}
 }
 \description{
 A wrapper to text_tokenize that tokenizes text into words.
