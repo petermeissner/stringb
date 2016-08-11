@@ -45,4 +45,9 @@ test_that("text_locate works", {
   })
 })
 
+test_that("text_locate does not ignore ...", {
+  expect_true({
+    !is.na(text_locate("abcd", "A", ignore.case=TRUE)$start)
+  })
+})
 

@@ -26,3 +26,11 @@ test_that("text_locate_all works", {
     )
   })
 })
+
+test_that("text_locate_all does not ignore ...", {
+  expect_true({
+    !is.na(
+      text_locate_all("abcd", "A", ignore.case=TRUE)[[1]]$start
+    )
+  })
+})

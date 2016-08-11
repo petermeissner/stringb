@@ -46,7 +46,7 @@ text_locate.default <- function(string, pattern, vectorize=FALSE, ...){
       SIMPLIFY = FALSE
     )
   }else{
-    res <- text_locate_worker(string, pattern)
+    res <- text_locate_worker(string, pattern, ...)
   }
   if(vectorize){
     for(i in seq_along(res)){
@@ -106,7 +106,7 @@ text_locate_all.default <- function(string, pattern, vectorize=FALSE, simplify=F
         )
     res <- unlist(res, recursive = FALSE)
   }else{
-    res <- text_locate_all_worker(string, pattern)
+    res <- text_locate_all_worker(string, pattern, ...)
   }
   if(simplify){
     for(i in seq_along(res)){
