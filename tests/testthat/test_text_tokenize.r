@@ -22,6 +22,9 @@ test_that("text_tokenize", {
         text_tokenize("meine mudder", "M", ignore.case = TRUE)$token
     )
   })
+  expect_true({
+    !is.na(text_tokenize("one line of code", "\n")$token)
+  })
 })
 
 

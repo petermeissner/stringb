@@ -142,6 +142,10 @@ text_tokenize.default <-
       }
 
       # return
+      iffer <- is.na(token$token)
+      if( sum(iffer) > 0 ){
+        token[iffer, "token"] <- text_sub(string, token[iffer, "from"], token[iffer, "to"])
+      }
       return(stringb_arrange(token, "from", "to"))
     }
   }
