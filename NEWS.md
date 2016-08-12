@@ -10,7 +10,6 @@ version 0.1.10 [2016-08-01 ...]
     
     
 * FEATURE
-    - plot.character()
 
     
 * DEVELOPMENT
