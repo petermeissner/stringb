@@ -6,6 +6,7 @@ version 0.1.10 [2016-08-01 ...]
 
 * BUGFIXES
     - text_locate_all() ignores ... (#10)
+    - text_tokenize() (#12)
     
     
 * FEATURE

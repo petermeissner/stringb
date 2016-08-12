@@ -67,7 +67,14 @@ text_tokenize.default <-
       }
       # finding characters spans where to split
       tlength <- text_length(string)
-      found_splitter        <- gregexpr(regex, string, ignore.case, fixed, useBytes)
+      found_splitter <-
+        gregexpr(
+          pattern     = regex,
+          text        = string,
+          ignore.case = ignore.case,
+          fixed       = fixed,
+          useBytes    = useBytes
+        )
       found_splitter_from   <- found_splitter[[1]]
       found_splitter_length <- attributes(found_splitter[[1]])$match.length
       found_splitter_to     <- found_splitter_length+found_splitter_from-1
@@ -80,8 +87,9 @@ text_tokenize.default <-
           )
         )
 
-      char_token <-
-        sort(unique(seq_len(tlength)[!(seq_len(tlength) %in% char_splitter)]))
+      # dev : not used anymore? ...
+      # char_token <-
+      #  sort(unique(seq_len(tlength)[!(seq_len(tlength) %in% char_splitter)]))
 
       char_token_from     <- c(1,found_splitter_to+1)
       char_token_to       <- c(ifelse(found_splitter[[1]]==1, 1, found_splitter[[1]]-1),tlength)
@@ -92,24 +100,30 @@ text_tokenize.default <-
           to    = char_token_to
         )
 
-      token <-
-        subset(token, !(token$from %in% char_splitter | token$to %in% char_splitter))
+      token_false_positive_iffer <-
+        !(token$from %in% char_splitter | token$to %in% char_splitter)
+
+      token <- subset(token, token_false_positive_iffer)
 
       # handling special cases
-      if( tlength>0 & dim(token)[1]==0 & !all(found_splitter[[1]]>0) ){
+      if( tlength > 0  &  dim(token)[1] == 0  &  !all( found_splitter[[1]] > 0 ) ){
         token <- rbind(token, c(1, tlength))
         names(token) <- c("from", "to")
       }
 
       # filling with tokens
-      tmp <- unlist(strsplit(string, regex))
-      tmp <- tmp[tmp!=""]
+      if( ignore.case ){
+        tmp <- regmatches(string, found_splitter, invert = TRUE)[[1]]
+      }else{
+        tmp <- unlist(strsplit(string, regex, fixed = fixed, perl = perl))
+      }
+      tmp <- subset(tmp, token_false_positive_iffer)
 
       token$token    <- tmp[seq_along(token$from)]
       token$is_token <- rep(TRUE, dim(token)[1])
 
       # adding non-tokens
-      if(non_token==TRUE){
+      if( non_token == TRUE ){
         # handling special cases
         if( any(found_splitter_to<0) | any(found_splitter_from<0) ){
           found_splitter_to   <- integer(0)

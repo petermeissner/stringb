@@ -14,6 +14,14 @@ test_that("text_tokenize", {
   expect_true({
     text_tokenize("  ", regex=" "); TRUE
   })
+  expect_true({
+    all(
+      text_tokenize("meine mudder", "M", ignore.case = TRUE)$token ==
+      c("eine ", "udder"),
+      text_tokenize("meine mudder", "m", ignore.case = FALSE)$token ==
+        text_tokenize("meine mudder", "M", ignore.case = TRUE)$token
+    )
+  })
 })
 
 
