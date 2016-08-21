@@ -1,6 +1,6 @@
 
-Using diffr for more than two files
-===================================
+Convenient Base R String Handling
+=================================
 
 Status
 ------
@@ -11,19 +11,19 @@ Status
 
 **Version**
 
-0.1.2.90000
+0.1.11.90000
 
 **License**
 
-MIT + file LICENSE <br>Peter Meissner \[aut, cre\], Ulrich Sieberer \[cph\], University of Konstanz \[cph\]
+MIT + file LICENSE <br>Peter Meissner <retep.meissner@gmail.com> \[aut, cre\]
 
 **Description**
 
-This is a description still to be done but to prevent checks about complaining about to short descriptions this does not simply read TBD.
+Base R already ships with string handling capabilities 'out-of-the-box' but lacks streamlined function names and workflow. The stringi (stringr) package on the other hand has well named functions, extensive Unicode support and allows for a streamlined workflow. On the other hand it adds dependencies and regular expression interpretation between base R functions and stringi functions might differ. This packages aims at providing a solution to the use case of unwanted dependencies on the one hand but wanted streamlined text processing on the other. The packages functions are solely based on wrapping base R functions into 'stringr'/'stringi' function names. Along the way it adds one or two extra functions and last but not least provides all functions as generics and defaults therefore allowing for adding methods for other text structures besides plain character.
 
 This packages aims at:
 
--   **no dependencies** except what comes with base-R
+-   **no dependencies** except what comes with base-R (i.e. there shall be no compilation needed)
 -   writing **text handling functions as generics** so that methods for all kind of structures containing text can be added
 -   providing functions that allow for different character encodings
 -   but rigorously defaulting to UTF-8 as expected input and default output therby enhancing cross platform cooperation
@@ -69,18 +69,22 @@ library(stringb)
 objects("package:stringb")
 ```
 
-    ##  [1] "%.%"                    "%..%"                   "text_c"                 "text_collapse"         
-    ##  [5] "text_count"             "text_delete"            "text_detect"            "text_dup"              
-    ##  [9] "text_eval"              "text_extract"           "text_extract_all"       "text_extract_group"    
-    ## [13] "text_extract_group_all" "text_filter"            "text_grep"              "text_grepl"            
-    ## [17] "text_grepv"             "text_length"            "text_locate"            "text_locate_all"       
-    ## [21] "text_locate_group"      "text_nchar"             "text_pad"               "text_read"             
-    ## [25] "text_rep"               "text_replace"           "text_replace_all"       "text_replace_group"    
-    ## [29] "text_replace_locates"   "text_show"              "text_snippet"           "text_split"            
-    ## [33] "text_split_n"           "text_sub"               "text_subset"            "text_to_lower"         
-    ## [37] "text_to_title_case"     "text_to_upper"          "text_tokenize"          "text_tokenize_words"   
-    ## [41] "text_trim"              "text_which"             "text_which_value"       "text_wrap"             
-    ## [45] "text_write"
+    ##  [1] "%.%"                     "%..%"                    "text_c"                 
+    ##  [4] "text_collapse"           "text_count"              "text_delete"            
+    ##  [7] "text_detect"             "text_dup"                "text_eval"              
+    ## [10] "text_extract"            "text_extract_all"        "text_extract_group"     
+    ## [13] "text_extract_group_all"  "text_filter"             "text_grep"              
+    ## [16] "text_grepl"              "text_grepv"              "text_length"            
+    ## [19] "text_locate"             "text_locate_all"         "text_locate_group"      
+    ## [22] "text_nchar"              "text_pad"                "text_read"              
+    ## [25] "text_rep"                "text_replace"            "text_replace_all"       
+    ## [28] "text_replace_group"      "text_replace_locates"    "text_show"              
+    ## [31] "text_snippet"            "text_split"              "text_split_n"           
+    ## [34] "text_sub"                "text_subset"             "text_to_lower"          
+    ## [37] "text_to_title_case"      "text_to_upper"           "text_tokenize"          
+    ## [40] "text_tokenize_lines"     "text_tokenize_sentences" "text_tokenize_words"    
+    ## [43] "text_trim"               "text_which"              "text_which_value"       
+    ## [46] "text_wrap"               "text_write"
 
 Example Usage
 -------------

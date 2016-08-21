@@ -4,8 +4,8 @@ output: github_document
 
 
 ```{r, include=FALSE}
-options("width"=110)
-tmp <- packageDescription("diffrprojects")
+options("width"=100)
+tmp <- devtools:::read_dcf("DESCRIPTION")
 ```
 
 ```{r, results='asis', echo=FALSE}
@@ -34,7 +34,7 @@ cat(tmp$Version)
 
 ```{r, results='asis', echo=FALSE}
 cat(tmp$License, "<br>")
-cat(tmp$Author)
+cat(as.character(eval(parse(text=tmp$Author))))
 ```
 
 
@@ -49,7 +49,7 @@ cat(tmp$Description)
 
 This packages aims at: 
 
-- **no dependencies** except what comes with base-R
+- **no dependencies** except what comes with base-R (i.e. there shall be no compilation needed)
 - writing **text handling functions as generics** so that methods for all kind of 
   structures containing text can be added 
 - providing functions that allow for different character encodings 
