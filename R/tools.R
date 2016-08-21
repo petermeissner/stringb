@@ -1,3 +1,53 @@
+#' function to invert spans to those numbers not covered
+#' @param from vector of span starts
+#' @param to vector of span ends
+#' @param start minimum
+#' @param end maximum value
+invert_spans <- function(from, to=NULL, start=1, end=Inf){
+  if( is.data.frame(from) & is.null(to) ){
+    to   <- from$end
+    from <- from$start
+  }
+  if(is.infinite(end)){
+    tmp <- (start:(max(to)+1))[!(start:(max(to)+1) %in% sequenize(from, to))]
+  }else{
+    tmp <- (start:end)[!(start:end %in% sequenize(from, to))]
+  }
+  tmp <- de_sequenize(tmp)
+  if(is.infinite(end)){
+    tmp$end[length(tmp$end)] <- Inf
+  }
+  tmp$length <- tmp$end - tmp$start +1
+  tmp$length[is.na(tmp$length)] <- Inf
+  return(tmp)
+}
+
+#' helper function that turns cut points into spans
+#' @param cuts where after to cut into pieces
+#' @param end where does it all end
+#' @keywords internal
+cuts_to_spans <- function(cuts, start=1, end=Inf){
+  cuts <- sort(cuts)
+  # doing duty to do
+  from  <- c(1, cuts + 1)
+  to    <- c(cuts, end)
+  tmp   <- data.frame(from, to)
+  # consistency checks
+  tmp <-
+    subset(
+      tmp,
+      !(
+        to > end |
+          from > end |
+          duplicated(tmp) |
+          to < start |
+          from < start
+      )
+    )
+  return(tmp)
+}
+
+
 #' helper function to spans into sequences
 #' @param start first number of sequence
 #' @param end last number of sequence
@@ -137,10 +187,6 @@ test_file <- function(x=NULL){
     return(system.file(paste("testfiles", x, sep="/"), package = "stringb") )
   }
 }
-
-
-
-
 
 
 

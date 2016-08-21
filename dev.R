@@ -1,12 +1,4 @@
-string      <- c("1234567890", "abcd1d1999asdf","aafdsadsf")
-pattern     <- "(\\d)\\d(\\d)"
-replacement <- c("_1_","_2_")
-group       <- TRUE
-match       <- NULL
-invert      <- FALSE
+library(stringb)
 
 
-
-
-dev(string, pattern, "-", group = 1:2)
-
+string <- text_read(stringb:::test_file("rc_2.txt"), tokenize=NULL, n=100)

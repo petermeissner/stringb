@@ -1,14 +1,16 @@
 ---
-title: "README"
-output:
-  html_document:
-    keep_md: yes
+output: github_document
 ---
 
 
-# stringb
+```{r, include=FALSE}
+options("width"=110)
+tmp <- packageDescription("diffrprojects")
+```
 
-Convenient base R string handling.
+```{r, results='asis', echo=FALSE}
+cat("#", tmp$Title)
+```
 
 
 ## Status
@@ -21,16 +23,29 @@ Convenient base R string handling.
 
 
 
+**Version**
 
-## Description
+```{r, results='asis', echo=FALSE}
+cat(tmp$Version)
+```
 
-Base R already ships with string handling capabilities
-    'out-of-the-box' but lacks streamlined function names and workflow.
-    The stringi (stringr) package on the other hand has well named functions
-    and allows for a streamlined workflow but adds further dependencies and
-    regular expression interpretation between base R functions and stringi
-    functions might differ. 
-    
+
+**License**
+
+```{r, results='asis', echo=FALSE}
+cat(tmp$License, "<br>")
+cat(tmp$Author)
+```
+
+
+
+**Description**
+
+```{r, results='asis', echo=FALSE}
+cat(tmp$Description)
+```
+
+
 
 This packages aims at: 
 

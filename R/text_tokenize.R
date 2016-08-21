@@ -182,3 +182,98 @@ text_tokenize_words.default <-
     return(stringb_arrange(res, "from", "to"))
   }
 
+#' generic to tokenize text into lines
+#'
+#'
+#' @param string the text to be tokenized
+#' @param non_token whether or not token as well as non tokens shall be returned.
+#' @export
+text_tokenize_lines <- function(string, non_token = FALSE){
+  UseMethod("text_tokenize_lines")
+}
+
+#' text_tokenize default
+#' @rdname text_tokenize_lines
+#' @method text_tokenize_lines default
+#' @export
+text_tokenize_lines.default <-
+  function(
+    string,
+    non_token = FALSE
+  ){
+    res <- text_tokenize(string, "\n")
+    if(non_token){
+      tmp <- text_tokenize(string, "[^\n]")
+      tmp$is_token <- rep(FALSE, dim(tmp)[1])
+      res <- rbind(res, tmp)
+      res <- stringb_arrange(res, "from", "to")
+    }
+    return(res)
+  }
+
+
+
+#' generic to tokenize text into sentences
+#'
+#' @param string the text to be tokenized
+#' @param non_token whether or not token as well as non tokens shall be returned.
+#' @export
+text_tokenize_sentences <- function(string, non_token=FALSE){
+  UseMethod("text_tokenize_sentences")
+}
+
+#' text_tokenize default
+#' @rdname text_tokenize_sentences
+#' @method text_tokenize_sentences default
+#' @export
+text_tokenize_sentences.default <- function(string, non_token=FALSE){
+    # find sentence boundaries
+    sentence_boundaries_1       <- text_locate_all(string, "([\\.\\!\\?][ \n]+\\p{Lu})", perl=TRUE)[[1]]
+    sentence_boundaries_1$start <- sentence_boundaries_1$start+1
+    sentence_boundaries_1$end   <- sentence_boundaries_1$end-1
+    sentence_boundaries_2       <- text_locate_all(string, "(\n ?\n+)", perl=TRUE)[[1]]
+
+    sentence_boundaries  <- rbind(sentence_boundaries_1, sentence_boundaries_2)
+    sentence_boundaries  <-
+      subset(
+        sentence_boundaries,
+        !is.na(sentence_boundaries$start),
+        -length
+      )
+
+    # invert to sentences
+    sentences <-
+      subset(
+        invert_spans(sentence_boundaries, end=nchar(string)),
+        TRUE,
+        -length
+      )
+    names(sentences) <- c("from", "to")
+
+    # get text
+    sentences$token <- substring(string, sentences$from, sentences$to)
+    sentences$is_token <- TRUE
+    # non_token
+    if( non_token ){
+      names(sentence_boundaries) <- c("from", "to")
+      sentence_boundaries$token  <- substring(string, sentence_boundaries$from, sentence_boundaries$to)
+      sentence_boundaries$is_token <- FALSE
+      sentences <- rbind(sentences, sentence_boundaries)
+      sentences <- stringb_arrange(sentences, "from", "to")
+    }
+    # return
+    return(sentences)
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+

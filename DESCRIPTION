@@ -1,7 +1,7 @@
 Package: stringb
 Title: Convenient Base R String Handling
 Date: 2016-08-01
-Version: 0.1.10.90000
+Version: 0.1.11.90000
 Authors@R: c(
     person(
       "Peter", "Meissner",
@@ -11,14 +11,17 @@ Authors@R: c(
   )
 Description: Base R already ships with string handling capabilities
     'out-of-the-box' but lacks streamlined function names and workflow.
-    The stringi (stringr) package on the other hand has well named functions
-    extensive Unicode support and allows for a streamlined workflow but adds
-    further dependencies and regular expression interpretation between base R
-    functions and stringi functions might differ. This packages aims at closing
-    the gap by providing another string handling package solely based wrapping
-    base R functions into stringr/stringi function names and workflow.
-    Fruthermore, stringb adds some further convenience functions for
-    string handling.
+    The stringi (stringr) package on the other hand has well named functions,
+    extensive Unicode support and allows for a streamlined workflow. On the
+    other hand it adds dependencies and regular expression interpretation
+    between base R functions and stringi functions might differ.
+    This packages aims at providing a solution to the use case of unwanted
+    dependencies on the one hand but wanted streamlined text processing on the
+    other. The packages functions are solely based on wrapping base R functions
+    into 'stringr'/'stringi' function names. Along the way it adds one or two
+    extra functions and last but not least provides all functions as generics
+    and defaults therefore allowing for adding methods for other text structures
+    besides plain character.
 Depends:
     R (>= 3.0.0)
 License: MIT + file LICENSE
