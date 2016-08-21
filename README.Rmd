@@ -15,7 +15,7 @@ cat("#", tmp$Title)
 
 ## Status
 
-*unstable* - in wild development with fuRiouS rEstRucturINg and biG biG pOKing
+getting stable BUT minor changes to function APIs or output might happen without regard to backward compatibility - so consider this something like a matured second draft
 
 [![Travis-CI Build Status](https://travis-ci.org/petermeissner/stringb.svg?branch=master)](https://travis-ci.org/petermeissner/stringb)
 [![codecov](https://codecov.io/gh/petermeissner/stringb/branch/master/graph/badge.svg)](https://codecov.io/gh/petermeissner/stringb/tree/master/R)
@@ -47,9 +47,10 @@ cat(tmp$Description)
 
 
 
-This packages aims at: 
+**This packages aims at:**
 
-- **no dependencies** except what comes with base-R (i.e. there shall be no compilation needed)
+- **no dependencies** except what comes with base-R (i.e. there shall be no compilation needed) 
+- for good or worse relying on base-R text handling mechanisms means getting **base-R regular expression engine including the Perl mode**
 - writing **text handling functions as generics** so that methods for all kind of 
   structures containing text can be added 
 - providing functions that allow for different character encodings 
@@ -63,7 +64,7 @@ This packages aims at:
   purpose for the added function(ality)
   
 
-This package does not aim at:
+**This package does not aim at:**
 
 - beeing fast (fast is good but will not be traded for the above listed aims - stringi might be your friend here)
 - beeing ultimativly compatible (compatible is good but again will not be traded for the above listed aims - again stringi might be your solution in that case)
