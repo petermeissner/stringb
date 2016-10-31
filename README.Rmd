@@ -15,7 +15,7 @@ cat("#", tmp$Title)
 
 ## Status
 
-getting stable BUT minor changes to function APIs or output might happen without regard to backward compatibility - so consider this something like a matured second draft
+first stable release
 
 [![Travis-CI Build Status](https://travis-ci.org/petermeissner/stringb.svg?branch=master)](https://travis-ci.org/petermeissner/stringb)
 [![codecov](https://codecov.io/gh/petermeissner/stringb/branch/master/graph/badge.svg)](https://codecov.io/gh/petermeissner/stringb/tree/master/R)

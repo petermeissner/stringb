@@ -70,7 +70,7 @@ library(stringb)
 objects("package:stringb")
 ```
 
-    ##  [1] "%.%"                     "%..%"                    "text_c"                 
+    ##  [1] "%..%"                    "%.%"                     "text_c"                 
     ##  [4] "text_collapse"           "text_count"              "text_delete"            
     ##  [7] "text_detect"             "text_dup"                "text_eval"              
     ## [10] "text_extract"            "text_extract_all"        "text_extract_group"     
@@ -81,9 +81,9 @@ objects("package:stringb")
     ## [25] "text_rep"                "text_replace"            "text_replace_all"       
     ## [28] "text_replace_group"      "text_replace_locates"    "text_show"              
     ## [31] "text_snippet"            "text_split"              "text_split_n"           
-    ## [34] "text_sub"                "text_subset"             "text_to_lower"          
-    ## [37] "text_to_title_case"      "text_to_upper"           "text_tokenize"          
-    ## [40] "text_tokenize_lines"     "text_tokenize_sentences" "text_tokenize_words"    
+    ## [34] "text_sub"                "text_subset"             "text_tokenize"          
+    ## [37] "text_tokenize_lines"     "text_tokenize_sentences" "text_tokenize_words"    
+    ## [40] "text_to_lower"           "text_to_title_case"      "text_to_upper"          
     ## [43] "text_trim"               "text_which"              "text_which_value"       
     ## [46] "text_wrap"               "text_write"
 
@@ -95,7 +95,7 @@ library(stringb)
 (test_file <- stringb:::test_file("rc_1_ch1.txt")) # just a file accompanying the package to test things
 ```
 
-    ## [1] "C:/Users/peter/R/win-library/3.3/stringb/testfiles/rc_1_ch1.txt"
+    ## [1] "/home/peter/R/x86_64-pc-linux-gnu-library/3.3/stringb/testfiles/rc_1_ch1.txt"
 
 ``` r
 text_read( test_file, tokenize = "\\W", n=20)[67:79]
@@ -111,7 +111,7 @@ library(stringb)
 (test_file <- stringb:::test_file("rc_3.txt")) # just a file accompanying the package to test things
 ```
 
-    ## [1] "C:/Users/peter/R/win-library/3.3/stringb/testfiles/rc_3.txt"
+    ## [1] "/home/peter/R/x86_64-pc-linux-gnu-library/3.3/stringb/testfiles/rc_3.txt"
 
 ``` r
 text          <- text_read(test_file, tokenize = "\\W+")
@@ -131,7 +131,7 @@ library(stringb)
 (test_file <- stringb:::test_file("rc_3.txt")) # just a file accompanying the package to test things
 ```
 
-    ## [1] "C:/Users/peter/R/win-library/3.3/stringb/testfiles/rc_3.txt"
+    ## [1] "/home/peter/R/x86_64-pc-linux-gnu-library/3.3/stringb/testfiles/rc_3.txt"
 
 ``` r
 text          <- text_read(test_file)

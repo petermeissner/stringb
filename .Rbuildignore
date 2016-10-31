@@ -10,3 +10,4 @@ benchmarks/*
 meta.R
 README_files
 stringb.pdf
+^cran-comments\.md$
