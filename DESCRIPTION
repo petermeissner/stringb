@@ -28,7 +28,8 @@ License: MIT + file LICENSE
 LazyData: TRUE
 Imports:
     graphics,
-    tools
+    tools,
+    backports
 Suggests:
     testthat,
     knitr,
