@@ -19,4 +19,3 @@ generic to tokenize text into sentences
 
 text_tokenize default
 }
-

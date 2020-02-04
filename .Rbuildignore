@@ -11,3 +11,5 @@ meta.R
 README_files
 stringb.pdf
 ^cran-comments\.md$
+^codecov\.yml$
+^README\.Rmd$

@@ -7,7 +7,7 @@
 text_read(file, tokenize = "\\n", encoding = "UTF-8", ...)
 }
 \arguments{
-\item{file}{name or path to the file to be read in or a \link[base]{connection} object (see \link[base]{readLines})}
+\item{file}{name or path to the file to be read in or a \link[base]{connections} object (see \link[base]{readLines})}
 
 \item{tokenize}{either
 NULL so that no splitting is done;
@@ -28,4 +28,3 @@ text to UTF-8 instead of transforming it to the system locale. (3) in
 addition to loading, it offers to tokenize the text using a regular expression
 or NULL for no tokenization at all.
 }
-

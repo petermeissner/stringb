@@ -16,4 +16,3 @@ text_filter(string, pattern, ...)
 \description{
 generic for subsetting/filtering vectors
 }
-

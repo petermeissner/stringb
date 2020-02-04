@@ -3,6 +3,16 @@ output: github_document
 ---
 
 
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "## ",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+
 ```{r, include=FALSE}
 options("width"=100)
 tmp <- devtools:::read_dcf("DESCRIPTION")
@@ -15,11 +25,11 @@ cat("#", tmp$Title)
 
 ## Status
 
-first stable release
 
 [![Travis-CI Build Status](https://travis-ci.org/petermeissner/stringb.svg?branch=master)](https://travis-ci.org/petermeissner/stringb)
 [![codecov](https://codecov.io/gh/petermeissner/stringb/branch/master/graph/badge.svg)](https://codecov.io/gh/petermeissner/stringb/tree/master/R)
 [![CRAN version](http://www.r-pkg.org/badges/version/stringb)](https://cran.r-project.org/package=stringb)
+![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/stringb)
 
 
 
@@ -89,10 +99,20 @@ Contributions are very much welcome, e.g. in the form of:
 
 ## Installation
 
+
+**dev version**
 ```{r, eval=FALSE}
 devtools::install_github("petermeissner/stringb")
 library(stringb)
 ```
+
+
+**stable version**
+```{r, eval=FALSE}
+install.packages("stringb")
+library(stringb)
+```
+
 
 ## Function list
 
@@ -115,7 +135,7 @@ text_read( test_file, tokenize = "\\W", n=20)[67:79]
 Although, text_read() is just a wrapper araound readLines() it has become more powerful, consistent and streamlined by (1) always producing UTF-8 encoded character vectors, (2) allowing the usage of all readLines() options - e.g. n, (3) and adding further useful functionality like on-the-fly-tokenization.
 
 
-```{r}
+```{r plot1}
 library(stringb)
 (test_file <- stringb:::test_file("rc_3.txt")) # just a file accompanying the package to test things
 
@@ -131,13 +151,15 @@ title("Friday Appearing in Robinson Crusoe")
 Text_detect() is another example for a streamlined interface (easier to remeber than grepl) with all base-R whistles and bells still beeing there - almost all base-R pattern matching functions have the ignore.case options to make pattern matching case insensitive. 
 
 
-```{r}
+```{r plot2}
 library(stringb)
 (test_file <- stringb:::test_file("rc_3.txt")) # just a file accompanying the package to test things
 text          <- text_read(test_file)
 
 plot(text, pattern="Friday", ignore.case=TRUE)
 ```
+
+
 
 A simple method to plot character vectors with pattern markup was added as well. 
     

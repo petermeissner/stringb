@@ -14,4 +14,3 @@ stringb_arrange(df, ...)
 \description{
 function to sort df by variables
 }
-

@@ -13,4 +13,3 @@ test_file(x = NULL)
 text function: wrapper for system.file() to access test files
 }
 \keyword{internal}
-

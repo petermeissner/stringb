@@ -25,4 +25,3 @@
 \description{
 function for plotting text
 }
-

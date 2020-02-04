@@ -18,4 +18,3 @@ text_nchar(x, type = "chars", allowNA = FALSE, keepNA = TRUE)
 \description{
 wrapper around nchar to return text length
 }
-

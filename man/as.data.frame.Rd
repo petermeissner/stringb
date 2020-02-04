@@ -15,4 +15,3 @@ as.data.frame(..., stringsAsFactors = FALSE)
 a stringsAsFactors=FALSE as.data.frame
 }
 \keyword{internal}
-

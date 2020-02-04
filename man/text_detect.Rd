@@ -17,7 +17,7 @@ text_grepl(string, pattern, ...)
 
 \item{pattern}{regex to look for}
 
-\item{...}{further arguments passed through to \link[base]{grepl}}
+\item{...}{further arguments passed through to \link[base]{grep}}
 }
 \description{
 generic function to test if a regex can be found within a string
@@ -26,4 +26,3 @@ text_detect default method
 
 generic function to test if a regex can be found within a string
 }
-

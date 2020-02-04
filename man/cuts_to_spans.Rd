@@ -15,4 +15,3 @@ cuts_to_spans(cuts, start = 1, end = Inf)
 helper function that turns cut points into spans
 }
 \keyword{internal}
-

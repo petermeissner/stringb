@@ -1,7 +1,7 @@
 #' generic function to test if a regex can be found within a string
 #' @param string text to be searched through
 #' @param pattern regex to look for
-#' @param ... further arguments passed through to \link[base]{grepl}
+#' @param ... further arguments passed through to \link[base]{grep}
 #' @export
 text_detect <- function(string, pattern, ...){
   UseMethod("text_detect")

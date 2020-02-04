@@ -5,7 +5,8 @@
 \alias{text_locate_all.default}
 \title{function to get start, end, length form pattern match for all matches}
 \usage{
-text_locate_all(string, pattern, vectorize = FALSE, simplify = FALSE, ...)
+text_locate_all(string, pattern, vectorize = FALSE, simplify = FALSE,
+  ...)
 
 \method{text_locate_all}{default}(string, pattern, vectorize = FALSE,
   simplify = FALSE, ...)
@@ -24,11 +25,10 @@ all lines}
 merged into a data.frame with columns identifying original line (i) and
 pattern (p) number}
 
-\item{...}{further arguments passed through to \link[base]{gregexpr}}
+\item{...}{further arguments passed through to \link[base]{grep}}
 }
 \description{
 function to get start, end, length form pattern match for all matches
 
 text_locate_all default
 }
-

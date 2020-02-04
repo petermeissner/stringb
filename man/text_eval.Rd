@@ -16,4 +16,3 @@ text_eval(x, envir = parent.frame(), ...)
 \description{
 wrapper function of eval() and parse() to evaluate character vector
 }
-

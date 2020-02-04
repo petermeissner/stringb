@@ -13,4 +13,3 @@ regmatches2(tmp, group = TRUE)
 helper function to standardize regexpr results
 }
 \keyword{internal}
-

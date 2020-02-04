@@ -19,11 +19,10 @@ text_extract_group(string, pattern, group, invert = FALSE, ...)
 
 \item{invert}{whether or no matches or non-matches should be extracted}
 
-\item{...}{further parameter passed through to \link[base]{regexec}}
+\item{...}{further parameter passed through to \link[base]{grep}}
 }
 \description{
 generic for getting regex group matches
 
 text default
 }
-

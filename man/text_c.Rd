@@ -25,4 +25,3 @@ text_c default
 \seealso{
 \link[stringb:grapes-..-grapes]{\%..\%} and \link[stringb:grapes-.-grapes]{\%.\%}
 }
-

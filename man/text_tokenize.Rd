@@ -5,28 +5,29 @@
 \alias{text_tokenize.default}
 \title{generic for gregexpr wrappers to tokenize text}
 \usage{
-text_tokenize(string, regex = NULL, ignore.case = FALSE, fixed = FALSE,
-  perl = FALSE, useBytes = FALSE, non_token = FALSE)
-
-\method{text_tokenize}{default}(string, regex = NULL, ignore.case = FALSE,
+text_tokenize(string, regex = NULL, ignore.case = FALSE,
   fixed = FALSE, perl = FALSE, useBytes = FALSE, non_token = FALSE)
+
+\method{text_tokenize}{default}(string, regex = NULL,
+  ignore.case = FALSE, fixed = FALSE, perl = FALSE,
+  useBytes = FALSE, non_token = FALSE)
 }
 \arguments{
 \item{string}{text to be tokenized}
 
-\item{regex}{regex expressing where to cut see (see \link[base]{gregexpr})}
+\item{regex}{regex expressing where to cut see (see \link[base]{grep})}
 
 \item{ignore.case}{whether or not reges should be case sensitive
-(see \link[base]{gregexpr})}
+(see \link[base]{grep})}
 
 \item{fixed}{whether or not regex should be interpreted as is or as regular
-expression (see \link[base]{gregexpr})}
+expression (see \link[base]{grep})}
 
 \item{perl}{whether or not Perl compatible regex should be used
-(see \link[base]{gregexpr})}
+(see \link[base]{grep})}
 
 \item{useBytes}{byte-by-byte matching of regex or character-by-character
-(see \link[base]{gregexpr})}
+(see \link[base]{grep})}
 
 \item{non_token}{should information for non-token, i.e. those patterns by
 which the text was splitted, be returned as well}
@@ -36,4 +37,3 @@ generic for gregexpr wrappers to tokenize text
 
 default method for text_tokenize generic
 }
-

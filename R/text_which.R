@@ -1,7 +1,7 @@
 #' generic function to know in which elements a pattern can be found
 #' @param string the text to be searched through
 #' @param pattern regex to look for
-#' @param ... further arguments passed through to \link[base]{grepl}
+#' @param ... further arguments passed through to \link[base]{grep}
 #' @export
 text_which <- function(string, pattern, ...){
   UseMethod("text_which")

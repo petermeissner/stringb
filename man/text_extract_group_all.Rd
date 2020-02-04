@@ -5,7 +5,8 @@
 \alias{text_extract_group_all.default}
 \title{generic for getting all regex group matches}
 \usage{
-text_extract_group_all(string, pattern, group = NULL, invert = FALSE, ...)
+text_extract_group_all(string, pattern, group = NULL, invert = FALSE,
+  ...)
 
 \method{text_extract_group_all}{default}(string, pattern, group = NULL,
   invert = FALSE, ...)
@@ -19,11 +20,10 @@ text_extract_group_all(string, pattern, group = NULL, invert = FALSE, ...)
 
 \item{invert}{whether or no matches or non-matches should be extracted}
 
-\item{...}{further parameter passed through to \link[base]{gregexpr}}
+\item{...}{further parameter passed through to \link[base]{grep}}
 }
 \description{
 generic for getting all regex group matches
 
 text default
 }
-

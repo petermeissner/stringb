@@ -7,7 +7,8 @@
 \alias{text_trim.numeric}
 \title{trim spaces}
 \usage{
-text_trim(string, side = c("both", "left", "right"), pattern = " ", ...)
+text_trim(string, side = c("both", "left", "right"), pattern = " ",
+  ...)
 
 \method{text_trim}{default}(string, side = c("both", "left", "right"),
   pattern = " ", ...)
@@ -37,4 +38,3 @@ trim spaces list
 
 trim spaces numeric
 }
-

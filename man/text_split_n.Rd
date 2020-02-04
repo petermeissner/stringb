@@ -24,4 +24,3 @@ generic splitting strings into pieces of length n
 
 text_split_n defaul method
 }
-

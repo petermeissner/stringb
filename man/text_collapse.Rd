@@ -2,9 +2,9 @@
 % Please edit documentation in R/text_collapse.R
 \name{text_collapse}
 \alias{text_collapse}
-\alias{text_collapse.data.frame}
 \alias{text_collapse.default}
 \alias{text_collapse.list}
+\alias{text_collapse.data.frame}
 \alias{text_collapse.matrix}
 \title{function for collapsing text vectors}
 \usage{
@@ -22,8 +22,6 @@ text_collapse(x, coll = "")
 \item{x}{object to be collapsed}
 
 \item{coll}{separator between collapsed text parts}
-
-\item{...}{additional parameter passed through to methods}
 }
 \description{
 function for collapsing text vectors
@@ -36,4 +34,3 @@ text_collapse() method for data.frames
 
 text_collapse() method for matrix
 }
-

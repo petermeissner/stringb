@@ -32,4 +32,3 @@ text_replace_locates default
 
 text_replace_locates default
 }
-

@@ -16,11 +16,10 @@ text_locate_group(string, pattern, group, ...)
 
 \item{group}{integer vector specifying groups to return}
 
-\item{...}{further options passed through to \link[base]{regexpr}}
+\item{...}{further options passed through to \link[base]{grep}}
 }
 \description{
 generic for getting positions regex groups
 
 text_locate_group default
 }
-

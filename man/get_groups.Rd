@@ -23,4 +23,3 @@ helper function for text_extract_group
 helper function for text_replace_group
 }
 \keyword{internal}
-

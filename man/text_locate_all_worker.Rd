@@ -11,9 +11,8 @@ text_locate_all_worker(string, pattern, ...)
 
 \item{pattern}{regex to look for}
 
-\item{...}{further options passed through to \link[base]{regexpr}}
+\item{...}{further options passed through to \link[base]{grep}}
 }
 \description{
 helper function to get start, end, length form pattern match
 }
-

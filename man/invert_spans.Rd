@@ -18,4 +18,3 @@ invert_spans(from, to = NULL, start = 1, end = Inf)
 \description{
 function to invert spans to those numbers not covered
 }
-

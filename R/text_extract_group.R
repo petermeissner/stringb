@@ -4,7 +4,7 @@
 #' @param pattern regex to be searched for
 #' @param group integer vector to indicate those regex group matches to extract
 #' @param invert whether or no matches or non-matches should be extracted
-#' @param ... further parameter passed through to \link[base]{regexec}
+#' @param ... further parameter passed through to \link[base]{grep}
 #' @export
 text_extract_group <- function(string, pattern, group, invert=FALSE, ...){
   UseMethod("text_extract_group")
@@ -69,7 +69,7 @@ get_groups <- function(x, group){
 #' @param string text from which to extract character sequence
 #' @param pattern regex to be searched for
 #' @param invert whether or no matches or non-matches should be extracted
-#' @param ... further parameter passed through to \link[base]{gregexpr}
+#' @param ... further parameter passed through to \link[base]{grep}
 #' @param group integer vector to indicate those regex group matches to extract
 #' @export
 text_extract_group_all <- function(string, pattern, group=NULL, invert=FALSE, ...){

@@ -17,4 +17,3 @@ sequenize(start, end = NULL, simplify = TRUE)
 helper function to spans into sequences
 }
 \keyword{internal}
-

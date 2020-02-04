@@ -13,4 +13,3 @@ drop_non_group_matches(tmp, group = TRUE)
 helper for usage of regmatches
 }
 \keyword{internal}
-

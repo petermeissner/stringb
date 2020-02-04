@@ -17,4 +17,3 @@ concatenating strings operator
 \seealso{
 \link{text_c} (and \link[base]{paste})
 }
-

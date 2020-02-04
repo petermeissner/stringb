@@ -19,11 +19,10 @@ pattern with length larger than 1 be allowed and if so, should it be
 matched to lines (with recycling if needed) instead of using on element on
 all lines}
 
-\item{...}{further options passed through to \link[base]{regexpr}}
+\item{...}{further options passed through to \link[base]{grep}}
 }
 \description{
 function to get start, end, length form pattern match
 
 text_locate default
 }
-

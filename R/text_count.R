@@ -6,7 +6,7 @@
 #'    matched to lines (with recycling if needed) instead of using on element on
 #'    all lines
 #' @param sum if true all element-wise counts will be summed up
-#' @param ... further arguments passed through to \link[base]{gregexpr}
+#' @param ... further arguments passed through to \link[base]{grep}
 #' @export
 text_count <- function(string, pattern, sum=FALSE, vectorize=FALSE, ...){
   UseMethod("text_count")

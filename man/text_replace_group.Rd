@@ -26,7 +26,7 @@ provided by the found parameter)}
 \item{invert}{should character spans provided by found or their counterparts
 be replaced}
 
-\item{...}{further parameter passed through to \link[base]{regexec}}
+\item{...}{further parameter passed through to \link[base]{grep}}
 }
 \description{
 function for replacing regex group matches
@@ -34,4 +34,3 @@ generic for getting regex group matches
 
 text_replace_group default
 }
-

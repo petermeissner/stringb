@@ -13,4 +13,3 @@ de_sequenize(x)
 helper function to transforms sequences into spans
 }
 \keyword{internal}
-

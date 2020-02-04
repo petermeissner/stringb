@@ -29,7 +29,4 @@ by certain function}
 }
 \description{
 shows text or portions of the text via cat and the usage of text_snippet()
-
-text_show default
 }
-

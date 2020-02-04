@@ -22,4 +22,3 @@ text_wrap default
 \seealso{
 \link[base]{strwrap}
 }
-

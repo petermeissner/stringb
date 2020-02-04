@@ -21,4 +21,3 @@ deleting patterns in string
 
 deleting patterns in string
 }
-

@@ -26,4 +26,3 @@ replacing patterns in string
 
 replacing patterns default
 }
-

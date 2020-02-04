@@ -22,11 +22,10 @@ pattern with length larger than 1 be allowed and if so, should it be
 matched to lines (with recycling if needed) instead of using on element on
 all lines}
 
-\item{...}{further arguments passed through to \link[base]{gregexpr}}
+\item{...}{further arguments passed through to \link[base]{grep}}
 }
 \description{
 generic for counting pattern occurences
 
 text_count defaul method
 }
-

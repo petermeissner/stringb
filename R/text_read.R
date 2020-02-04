@@ -8,7 +8,7 @@
 #' addition to loading, it offers to tokenize the text using a regular expression
 #' or NULL for no tokenization at all.
 #'
-#' @param file name or path to the file to be read in or a \link[base]{connection} object (see \link[base]{readLines})
+#' @param file name or path to the file to be read in or a \link[base]{connections} object (see \link[base]{readLines})
 #' @param tokenize either
 #'    NULL so that no splitting is done;
 #'    a regular expression to use to split text into parts;

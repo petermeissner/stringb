@@ -1,7 +1,7 @@
 #' helper function to get start, end, length form pattern match
 #' @param string text to be searched through
 #' @param pattern regex to look for
-#' @param ... further options passed through to \link[base]{regexpr}
+#' @param ... further options passed through to \link[base]{grep}
 text_locate_worker <- function(string, pattern, ...){
   tmp <- regexpr(pattern, string, ...)
   regmatches2(tmp)
@@ -14,7 +14,7 @@ text_locate_worker <- function(string, pattern, ...){
 #'    pattern with length larger than 1 be allowed and if so, should it be
 #'    matched to lines (with recycling if needed) instead of using on element on
 #'    all lines
-#' @param ... further options passed through to \link[base]{regexpr}
+#' @param ... further options passed through to \link[base]{grep}
 #' @export
 text_locate <- function(string, pattern, vectorize=FALSE, ...){
   UseMethod("text_locate")
@@ -65,7 +65,7 @@ text_locate.default <- function(string, pattern, vectorize=FALSE, ...){
 #' helper function to get start, end, length form pattern match
 #' @param string text to be searched through
 #' @param pattern regex to look for
-#' @param ... further options passed through to \link[base]{regexpr}
+#' @param ... further options passed through to \link[base]{grep}
 text_locate_all_worker <- function(string, pattern, ...){
   tmp <- gregexpr(pattern, string, ...)
   lapply(tmp, regmatches2)
@@ -81,7 +81,7 @@ text_locate_all_worker <- function(string, pattern, ...){
 #' @param simplify either getting back a list of results or all list elements
 #'    merged into a data.frame with columns identifying original line (i) and
 #'    pattern (p) number
-#' @param ... further arguments passed through to \link[base]{gregexpr}
+#' @param ... further arguments passed through to \link[base]{grep}
 #' @export
 text_locate_all <- function(string, pattern, vectorize=FALSE, simplify=FALSE, ...){
   UseMethod("text_locate_all")

@@ -1,14 +1,14 @@
 #' generic for gregexpr wrappers to tokenize text
 #' @param string text to be tokenized
-#' @param regex regex expressing where to cut see (see \link[base]{gregexpr})
+#' @param regex regex expressing where to cut see (see \link[base]{grep})
 #' @param ignore.case whether or not reges should be case sensitive
-#'    (see \link[base]{gregexpr})
+#'    (see \link[base]{grep})
 #' @param fixed whether or not regex should be interpreted as is or as regular
-#'    expression (see \link[base]{gregexpr})
+#'    expression (see \link[base]{grep})
 #' @param perl whether or not Perl compatible regex should be used
-#'    (see \link[base]{gregexpr})
+#'    (see \link[base]{grep})
 #' @param useBytes byte-by-byte matching of regex or character-by-character
-#'    (see \link[base]{gregexpr})
+#'    (see \link[base]{grep})
 #' @param non_token should information for non-token, i.e. those patterns by
 #'    which the text was splitted, be returned as well
 #' @export

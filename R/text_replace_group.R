@@ -49,7 +49,7 @@ text_replace_locates.default <- function(string, found, replacement, group, inve
 #'
 #' @param string text from which to extract character sequence
 #' @param pattern regex to be searched for
-#' @param ... further parameter passed through to \link[base]{regexec}
+#' @param ... further parameter passed through to \link[base]{grep}
 #' @param group vector of integers identifying thos regex groups to be replaced
 #' @param replacement character vector of replacements of length 1 or
 #'        length(group) to replace regex group matches (marked character spans

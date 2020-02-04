@@ -7,13 +7,13 @@
 \usage{
 text_write(string, file, sep = "\\n", encoding = "UTF-8", ...)
 
-\method{text_write}{default}(string, file, sep = "\\n", encoding = "UTF-8",
-  ...)
+\method{text_write}{default}(string, file, sep = "\\n",
+  encoding = "UTF-8", ...)
 }
 \arguments{
 \item{string}{text to be written}
 
-\item{file}{file name or file path or an \link[base]{connection} object -
+\item{file}{file name or file path or an \link[base]{connections} object -
 passed through to writeLines()'s con argument}
 
 \item{sep}{character to separate lines (i.e. vector elements) from each other
@@ -25,15 +25,12 @@ passed through to writeLines()'s con argument}
 (not used at the moment)}
 }
 \description{
-A generic function to write text to file (or a \link[base]{connection}) and
+A generic function to write text to file (or a \link[base]{connections}) and
    accompanying methods that wrap \link[base]{writeLines} to do so. In contrast
    to vanilla writeLines() text_write() (1) is  a generic so methods, handling
    something else than character vectors, can be implemented (2) in contrast to
    writeLines()' default to transform to write text in the system locale
    text_write() will default to UTF-8 no matter the locale (3) furthermore this
    encoding can be changed to any encoding supported by \link[base]{iconv}
-   (see also \link[base]{iconvlist})
-
-text_write() default
+   (see also inconvlist \link[base]{iconv})
 }
-

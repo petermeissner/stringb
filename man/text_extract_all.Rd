@@ -25,4 +25,3 @@ text_extract_all(x, pattern, ignore.case = FALSE, perl = FALSE,
 \description{
 wrapper function around gregexec and regmatches
 }
-

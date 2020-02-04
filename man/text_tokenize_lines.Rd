@@ -19,4 +19,3 @@ generic to tokenize text into lines
 
 text_tokenize default
 }
-

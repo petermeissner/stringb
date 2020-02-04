@@ -1,7 +1,7 @@
 Package: stringb
 Title: Convenient Base R String Handling
-Date: 2016-11-01
-Version: 0.1.13
+Date: 2020-02-04
+Version: 0.1.14
 Authors@R: c(
     person(
       "Peter", "Meissner",
@@ -32,7 +32,9 @@ Imports:
 Suggests:
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 BugReports: https://github.com/petermeissner/stringb/issues
 URL: https://github.com/petermeissner/stringb
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.1
+Encoding: UTF-8

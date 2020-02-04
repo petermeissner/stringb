@@ -1,9 +1,10 @@
 
 
 #' function for collapsing text vectors
+#'
 #' @param x object to be collapsed
 #' @param coll separator between collapsed text parts
-#' @param ... additional parameter passed through to methods
+#'
 #' @export
 text_collapse <- function (x, coll="") {
   UseMethod("text_collapse")

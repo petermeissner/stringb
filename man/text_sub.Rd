@@ -24,4 +24,3 @@ text_sub default
 \seealso{
 \link{text_snippet}
 }
-

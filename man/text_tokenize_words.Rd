@@ -19,7 +19,4 @@ A wrapper to text_tokenize that tokenizes text into words.
 Since using text_tokenize()'s option non_token might slow things
 down considerably this one purpose wrapper is a little more clever
 than the general implementation and hence much faster.
-
-text_tokenize default
 }
-

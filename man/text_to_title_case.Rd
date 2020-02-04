@@ -17,4 +17,3 @@ function for make text lower case
 
 default method for text_to_title_case.()
 }
-
