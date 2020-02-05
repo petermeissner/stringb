@@ -12,7 +12,7 @@ text_count <- function(string, pattern, sum=FALSE, vectorize=FALSE, ...){
   UseMethod("text_count")
 }
 
-#' text_count defaul method
+#' text_count default method
 #' @rdname text_count
 #' @method text_count default
 #' @export

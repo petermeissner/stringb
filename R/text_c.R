@@ -1,4 +1,4 @@
-#' generic for concatenating strings
+#' generic for concatonating strings
 #'
 #'
 #' @param ... one or more texts to be concatonated (see also \link[base]{paste})

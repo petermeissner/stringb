@@ -45,22 +45,22 @@ methods for other text structures besides plain character vectors.
     all kind of structures containing text can be added
   - providing functions that allow for different character encodings
   - but rigorously defaulting to UTF-8 as expected input and default
-    output therby enhancing cross platform cooperation
+    output thereby enhancing cross platform cooperation
   - adding more power to general basic text handling functions by
     additional options (e.g. the text\_read() function allows to read in
     and tokenize text in one function call)
   - and insisting on a **flat interface** - meaning that all
     functionality should come from functions and plain parameters (in
-    contrast to e.g. parameters that need specialised functions or
-    funtions outputs to perform)
+    contrast to e.g. parameters that need specialized functions or
+    functions outputs to perform)
   - adding further general text handling tools if there is a general
     enough purpose for the added function(ality)
 
 **This package does not aim at:**
 
-  - beeing fast (fast is good but will not be traded for the above
-    listed aims - stringi might be your friend here)
-  - beeing ultimativly compatible (compatible is good but again will not
+  - being fast (fast is good but will not be traded for the above listed
+    aims - stringi might be your friend here)
+  - being ultimately compatible (compatible is good but again will not
     be traded for the above listed aims - again stringi might be your
     solution in that case)
 
@@ -99,7 +99,7 @@ Contributions are very much welcome, e.g. in the form of:
     documentation)
   - **vignette writing** (file an
     [issue](https://guides.github.com/features/issues/) first so that we
-    can discuss htings than [fork the
+    can discuss things than [fork the
     package](https://help.github.com/articles/fork-a-repo/) and later on
     make a [pull
     request](https://help.github.com/articles/using-pull-requests/))
@@ -170,7 +170,7 @@ text_read( test_file, tokenize = "\\W", n=20)[67:79]
 ##   [9] "online"    "at"        "www"       "gutenberg" "org"
 ```
 
-Although, text\_read() is just a wrapper araound readLines() it has
+Although, text\_read() is just a wrapper around readLines() it has
 become more powerful, consistent and streamlined by (1) always producing
 UTF-8 encoded character vectors, (2) allowing the usage of all
 readLines() options - e.g. n, (3) and adding further useful
@@ -192,7 +192,7 @@ title("Friday Appearing in Robinson Crusoe")
 <img src="man/figures/README-plot1-1.png" width="100%" />
 
 Text\_detect() is another example for a streamlined interface (easier to
-remeber than grepl) with all base-R whistles and bells still beeing
+remember than grepl) with all base-R whistles and bells still being
 there - almost all base-R pattern matching functions have the
 ignore.case options to make pattern matching case insensitive.
 

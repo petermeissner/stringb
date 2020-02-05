@@ -27,5 +27,5 @@ all lines}
 \description{
 generic for counting pattern occurences
 
-text_count defaul method
+text_count default method
 }

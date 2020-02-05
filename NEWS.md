@@ -6,7 +6,7 @@ version 0.1.13 [2016-11-01 ...]
 --------------------------------------------------------------------------
 
 * BUGFIXES
-    - in contrast to DESCRIPTION specification package would not support R >= 3.0.0 since the strrep() dependecy was only introduced in R 3.2.5
+    - in contrast to DESCRIPTION specification package would not support R >= 3.0.0 since the strrep() dependency was only introduced in R 3.2.5
     
 * FEATURE
 

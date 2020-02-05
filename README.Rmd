@@ -65,19 +65,19 @@ cat(tmp$Description)
   structures containing text can be added 
 - providing functions that allow for different character encodings 
 - but rigorously defaulting to UTF-8 as expected input and default output 
-  therby enhancing cross platform cooperation
+  thereby enhancing cross platform cooperation
 - adding more power to general basic text handling functions by additional 
   options (e.g. the text_read() function allows to read in and tokenize text in 
   one function call)
-- and insisting on a **flat interface** - meaning that all functionality should come from functions and plain parameters (in contrast to e.g. parameters that need specialised functions or funtions outputs to perform)
+- and insisting on a **flat interface** - meaning that all functionality should come from functions and plain parameters (in contrast to e.g. parameters that need specialized functions or functions outputs to perform)
 - adding further general text handling tools if there is a general enough 
   purpose for the added function(ality)
   
 
 **This package does not aim at:**
 
-- beeing fast (fast is good but will not be traded for the above listed aims - stringi might be your friend here)
-- beeing ultimativly compatible (compatible is good but again will not be traded for the above listed aims - again stringi might be your solution in that case)
+- being fast (fast is good but will not be traded for the above listed aims - stringi might be your friend here)
+- being ultimately compatible (compatible is good but again will not be traded for the above listed aims - again stringi might be your solution in that case)
 
 
 ## Contribution
@@ -90,7 +90,7 @@ Contributions are very much welcome, e.g. in the form of:
 - **bug reporting** (file an [issue](https://guides.github.com/features/issues/) - after having searched if the issue came up before - as - if possible - [minimal reproducable example](http://stackoverflow.com/help/mcve))
 - **extending help files** (e.g. [edit the respective files directly on Github](https://help.github.com/articles/editing-files-in-another-user-s-repository/) or [fork the package](https://help.github.com/articles/fork-a-repo/) and later on make a [pull request](https://help.github.com/articles/using-pull-requests/); note, that the package use [roxygen2](http://r-pkgs.had.co.nz/man.html) for easing documentation)
 - **writing example** (e.g. [edit the respective files directly on Github](https://help.github.com/articles/editing-files-in-another-user-s-repository/) or [fork the package](https://help.github.com/articles/fork-a-repo/) and later on make a [pull request](https://help.github.com/articles/using-pull-requests/); note, that the package use [roxygen2](http://r-pkgs.had.co.nz/man.html) for easing documentation)
-- **vignette writing** (file an [issue](https://guides.github.com/features/issues/) first so that we can discuss htings than [fork the package](https://help.github.com/articles/fork-a-repo/) and later on make a [pull request](https://help.github.com/articles/using-pull-requests/))
+- **vignette writing** (file an [issue](https://guides.github.com/features/issues/) first so that we can discuss things than [fork the package](https://help.github.com/articles/fork-a-repo/) and later on make a [pull request](https://help.github.com/articles/using-pull-requests/))
 - **test writing** (have a look at the [test coverage](https://codecov.io/gh/petermeissner/stringb/tree/master/R) than [fork the package](https://help.github.com/articles/fork-a-repo/) and later on make a [pull request](https://help.github.com/articles/using-pull-requests/))
 - **feature suggestions** (file an [issue](https://guides.github.com/features/issues/) describing the idea, why this is important, possible alternative solutions and an example)
 - **general discussion** of approach and or implementation  (file an [issue](https://guides.github.com/features/issues/))
@@ -132,7 +132,7 @@ library(stringb)
 text_read( test_file, tokenize = "\\W", n=20)[67:79]
 ```
 
-Although, text_read() is just a wrapper araound readLines() it has become more powerful, consistent and streamlined by (1) always producing UTF-8 encoded character vectors, (2) allowing the usage of all readLines() options - e.g. n, (3) and adding further useful functionality like on-the-fly-tokenization.
+Although, text_read() is just a wrapper around readLines() it has become more powerful, consistent and streamlined by (1) always producing UTF-8 encoded character vectors, (2) allowing the usage of all readLines() options - e.g. n, (3) and adding further useful functionality like on-the-fly-tokenization.
 
 
 ```{r plot1}
@@ -148,7 +148,7 @@ title("Friday Appearing in Robinson Crusoe")
 
 ```
 
-Text_detect() is another example for a streamlined interface (easier to remeber than grepl) with all base-R whistles and bells still beeing there - almost all base-R pattern matching functions have the ignore.case options to make pattern matching case insensitive. 
+Text_detect() is another example for a streamlined interface (easier to remember than grepl) with all base-R whistles and bells still being there - almost all base-R pattern matching functions have the ignore.case options to make pattern matching case insensitive. 
 
 
 ```{r plot2}
