@@ -1,28 +1,38 @@
-I am very sorry for updating the package already (I am aware that this should 
-not be done).
 
-BUT I discovered that although the package states that it runs on R 3.0.0 
-onwards this is actually not true. Since it depends on base::strrep() which was 
-only introduced recently. The package would not build e.g. for R 3.2.5. 
-(at https://cran.r-project.org/web/packages/stringb/index.html the r-oldrel 
-build is missing)
+# Your message:
 
-I fixed this using the backports package, increased the version number and run 
-tests again.
+Dear maintainer,
+
+Please see the problems shown on
+<https://cran.r-project.org/web/checks/check_results_stringb.html>.
+
+Specifically, see the warnings about 'Documented arguments not in
+\usage' in the r-devel checks.  These are from a recent bug fix
+(PR#16223, see
+<https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16223>): can you
+please fix your man pages as necessary?  (In most cases, remove the
+documentation for argument '...'.)
+
+Please correct before 2020-02-17 to safely retain your package on CRAN.
+
+Best,
+-k
+
+
+# My Actions
+
+- fixed documentation issue
 
 
 
 ## Test environments
 
-- x86_64-w64-mingw32 (R 3.2.5)
-- linux-x86_64-fedora-clang (R devel)
-- linux-x86_64-ubuntu-gcc (R 3.3.1)
+- Win10 (R 3.6.1)
+- Ubuntu 16.04.6 LTS (R 3.6.2)
+- WinBuilder (R 3.6.2) https://win-builder.r-project.org/MflStM67Rm4p/00check.log
 
-- http://builder.r-hub.io/status/stringb_0.1.13.tar.gz-98e15c74baaa4046a2991c3e964450a5
-- http://builder.r-hub.io/status/stringb_0.1.13.tar.gz-d095f0c125e14c01937e1ea54187cf01
-- http://builder.r-hub.io/status/stringb_0.1.13.tar.gz-1c6babefa05d4c96bf2c2c934bc71338
 
 
 ## Test results 
 
-no errors, no warnings, no notes - except expected one note each about too short a time since last submission. 
+no errors, no warnings, no notes
