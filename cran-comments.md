@@ -1,33 +1,46 @@
 
 # Your message:
 
-Dear maintainer,
+You may have seen that when running your package code with current
+r-devel, one gets warnings about
 
-Please see the problems shown on
-<https://cran.r-project.org/web/checks/check_results_stringb.html>.
+  cannot xtfrm data frames
 
-Specifically, see the warnings about 'Documented arguments not in
-\usage' in the r-devel checks.  These are from a recent bug fix
-(PR#16223, see
-<https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16223>): can you
-please fix your man pages as necessary?  (In most cases, remove the
-documentation for argument '...'.)
+This is because you call order() on a data frame with k rows and 1
+column which (currently) returns something of length k.
 
-Please correct before 2020-02-17 to safely retain your package on CRAN.
+Now,
 
-Best,
--k
+? sort says
+
+     Sort (or _order_) a vector or factor (partially) into ascending or
+     descending order.  For ordering along more than one variable,
+     e.g., for sorting data frames, see ‘order’
+
+where in turn ? order says
+
+     ‘order’ returns a permutation which rearranges its first argument
+     into ascending or descending order, breaking ties by further
+     arguments.  ‘sort.list’ does the same, using only one argument.
+     See the examples for how to use these functions to sort data
+     frames, etc.
+
+and then the examples clearly explain to use do.call() for data
+frames, ideally also unnaming to avoid name clashes.
+
+Can you please change your package code to no longer call order() on
+data frames?
 
 
 # My Actions
 
-- fixed documentation issue
+- fixed stringb_arrange() accordingly
 
 
 
 ## Test environments
 
-- Win10 (R 3.6.1)
+- Win10 (R 3.6.3)
 - Ubuntu 16.04.6 LTS (R 3.6.2)
 - WinBuilder (R 3.6.2) https://win-builder.r-project.org/MflStM67Rm4p/00check.log
 
