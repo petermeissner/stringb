@@ -40,9 +40,9 @@ data frames?
 
 ## Test environments
 
-- Win10 (R 3.6.3)
-- Ubuntu 16.04.6 LTS (R 3.6.2)
-- WinBuilder (R 3.6.2) https://win-builder.r-project.org/MflStM67Rm4p/00check.log
+- Win10, local (R 3.6.3)
+- Ubuntu 18.04 LTS old, devel, release
+- WinBuilder devel, release
 
 
 
