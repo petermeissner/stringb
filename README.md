@@ -79,7 +79,7 @@ Contributions are very much welcome, e.g. in the form of:
   - **bug reporting** (file an
     [issue](https://guides.github.com/features/issues/) - after having
     searched if the issue came up before - as - if possible - [minimal
-    reproducable example](http://stackoverflow.com/help/mcve))
+    reproducable example](https://stackoverflow.com/help/mcve))
   - **extending help files** (e.g. [edit the respective files directly
     on
     Github](https://help.github.com/articles/editing-files-in-another-user-s-repository/)
