@@ -4,8 +4,7 @@
 \alias{text_length}
 \title{wrapper around nchar to return text length}
 \usage{
-text_length(x, type = "chars", allowNA = FALSE, keepNA = TRUE,
-  na.rm = FALSE)
+text_length(x, type = "chars", allowNA = FALSE, keepNA = TRUE, na.rm = FALSE)
 }
 \arguments{
 \item{x}{see \link{nchar}}

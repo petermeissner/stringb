@@ -5,11 +5,9 @@
 \alias{text_locate_all.default}
 \title{function to get start, end, length form pattern match for all matches}
 \usage{
-text_locate_all(string, pattern, vectorize = FALSE, simplify = FALSE,
-  ...)
+text_locate_all(string, pattern, vectorize = FALSE, simplify = FALSE, ...)
 
-\method{text_locate_all}{default}(string, pattern, vectorize = FALSE,
-  simplify = FALSE, ...)
+\method{text_locate_all}{default}(string, pattern, vectorize = FALSE, simplify = FALSE, ...)
 }
 \arguments{
 \item{string}{text to search through}

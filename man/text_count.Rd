@@ -7,8 +7,7 @@
 \usage{
 text_count(string, pattern, sum = FALSE, vectorize = FALSE, ...)
 
-\method{text_count}{default}(string, pattern, sum = FALSE,
-  vectorize = FALSE, ...)
+\method{text_count}{default}(string, pattern, sum = FALSE, vectorize = FALSE, ...)
 }
 \arguments{
 \item{string}{text to search through}

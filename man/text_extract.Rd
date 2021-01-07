@@ -4,8 +4,15 @@
 \alias{text_extract}
 \title{extract regex matches}
 \usage{
-text_extract(x, pattern, ignore.case = FALSE, perl = FALSE,
-  fixed = FALSE, useBytes = FALSE, invert = FALSE)
+text_extract(
+  x,
+  pattern,
+  ignore.case = FALSE,
+  perl = FALSE,
+  fixed = FALSE,
+  useBytes = FALSE,
+  invert = FALSE
+)
 }
 \arguments{
 \item{x}{text from which to extract}

@@ -5,11 +5,9 @@
 \alias{text_extract_group_all.default}
 \title{generic for getting all regex group matches}
 \usage{
-text_extract_group_all(string, pattern, group = NULL, invert = FALSE,
-  ...)
+text_extract_group_all(string, pattern, group = NULL, invert = FALSE, ...)
 
-\method{text_extract_group_all}{default}(string, pattern, group = NULL,
-  invert = FALSE, ...)
+\method{text_extract_group_all}{default}(string, pattern, group = NULL, invert = FALSE, ...)
 }
 \arguments{
 \item{string}{text from which to extract character sequence}

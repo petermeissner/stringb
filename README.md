@@ -4,7 +4,7 @@
 ## Status
 
 [![Travis-CI Build
-Status](https://travis-ci.org/petermeissner/stringb.svg?branch=master)](https://travis-ci.org/petermeissner/stringb)
+Status](https://api.travis-ci.com/petermeissner/stringb.svg?branch=master)](https://www.travis-ci.com/github/petermeissner/stringb)
 [![codecov](https://codecov.io/gh/petermeissner/stringb/branch/master/graph/badge.svg)](https://codecov.io/gh/petermeissner/stringb/tree/master/R)
 [![CRAN
 version](http://www.r-pkg.org/badges/version/stringb)](https://cran.r-project.org/package=stringb)
@@ -12,7 +12,7 @@ version](http://www.r-pkg.org/badges/version/stringb)](https://cran.r-project.or
 
 **Version**
 
-0.1.14
+0.1.15
 
 **License**
 

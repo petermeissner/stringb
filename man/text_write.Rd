@@ -7,8 +7,7 @@
 \usage{
 text_write(string, file, sep = "\\n", encoding = "UTF-8", ...)
 
-\method{text_write}{default}(string, file, sep = "\\n",
-  encoding = "UTF-8", ...)
+\method{text_write}{default}(string, file, sep = "\\n", encoding = "UTF-8", ...)
 }
 \arguments{
 \item{string}{text to be written}

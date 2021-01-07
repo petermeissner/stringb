@@ -9,10 +9,6 @@ get_groups(x, group)
 get_groups(x, group)
 }
 \arguments{
-\item{x}{text_extract_group result}
-
-\item{groups}{groups to extract}
-
 \item{x}{text_replace_group result}
 
 \item{groups}{groups to extract}

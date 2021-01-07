@@ -5,12 +5,25 @@
 \alias{text_tokenize.default}
 \title{generic for gregexpr wrappers to tokenize text}
 \usage{
-text_tokenize(string, regex = NULL, ignore.case = FALSE,
-  fixed = FALSE, perl = FALSE, useBytes = FALSE, non_token = FALSE)
+text_tokenize(
+  string,
+  regex = NULL,
+  ignore.case = FALSE,
+  fixed = FALSE,
+  perl = FALSE,
+  useBytes = FALSE,
+  non_token = FALSE
+)
 
-\method{text_tokenize}{default}(string, regex = NULL,
-  ignore.case = FALSE, fixed = FALSE, perl = FALSE,
-  useBytes = FALSE, non_token = FALSE)
+\method{text_tokenize}{default}(
+  string,
+  regex = NULL,
+  ignore.case = FALSE,
+  fixed = FALSE,
+  perl = FALSE,
+  useBytes = FALSE,
+  non_token = FALSE
+)
 }
 \arguments{
 \item{string}{text to be tokenized}

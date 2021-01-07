@@ -5,11 +5,25 @@
 \alias{text_show.default}
 \title{showing text}
 \usage{
-text_show(x, length = 500, from = NULL, to = NULL, coll = FALSE,
-  wrap = FALSE, ...)
+text_show(
+  x,
+  length = 500,
+  from = NULL,
+  to = NULL,
+  coll = FALSE,
+  wrap = FALSE,
+  ...
+)
 
-\method{text_show}{default}(x, length = 500, from = NULL, to = NULL,
-  coll = FALSE, wrap = FALSE, ...)
+\method{text_show}{default}(
+  x,
+  length = 500,
+  from = NULL,
+  to = NULL,
+  coll = FALSE,
+  wrap = FALSE,
+  ...
+)
 }
 \arguments{
 \item{x}{text to be shown}

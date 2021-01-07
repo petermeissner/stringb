@@ -4,8 +4,15 @@
 \alias{plot.character}
 \title{function for plotting text}
 \usage{
-\method{plot}{character}(x, y = NULL, col = "grey", border = "grey",
-  pattern = NULL, pattern_col = "#ED4C4C", ...)
+\method{plot}{character}(
+  x,
+  y = NULL,
+  col = "grey",
+  border = "grey",
+  pattern = NULL,
+  pattern_col = "#ED4C4C",
+  ...
+)
 }
 \arguments{
 \item{x}{object of class rtext}

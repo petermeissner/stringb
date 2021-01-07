@@ -7,8 +7,7 @@
 \usage{
 text_replace_locates(string, found, replacement, group, invert)
 
-\method{text_replace_locates}{default}(string, found, replacement, group,
-  invert)
+\method{text_replace_locates}{default}(string, found, replacement, group, invert)
 }
 \arguments{
 \item{string}{text for which to replace parts}

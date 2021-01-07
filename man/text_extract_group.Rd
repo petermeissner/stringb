@@ -7,8 +7,7 @@
 \usage{
 text_extract_group(string, pattern, group, invert = FALSE, ...)
 
-\method{text_extract_group}{default}(string, pattern, group = NULL,
-  invert = FALSE, ...)
+\method{text_extract_group}{default}(string, pattern, group = NULL, invert = FALSE, ...)
 }
 \arguments{
 \item{string}{text from which to extract character sequence}

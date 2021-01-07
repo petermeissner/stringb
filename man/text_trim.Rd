@@ -7,17 +7,13 @@
 \alias{text_trim.numeric}
 \title{trim spaces}
 \usage{
-text_trim(string, side = c("both", "left", "right"), pattern = " ",
-  ...)
+text_trim(string, side = c("both", "left", "right"), pattern = " ", ...)
 
-\method{text_trim}{default}(string, side = c("both", "left", "right"),
-  pattern = " ", ...)
+\method{text_trim}{default}(string, side = c("both", "left", "right"), pattern = " ", ...)
 
-\method{text_trim}{list}(string, side = c("both", "left", "right"),
-  pattern = " ", ...)
+\method{text_trim}{list}(string, side = c("both", "left", "right"), pattern = " ", ...)
 
-\method{text_trim}{numeric}(string, side = c("both", "left", "right"),
-  pattern = " ", ...)
+\method{text_trim}{numeric}(string, side = c("both", "left", "right"), pattern = " ", ...)
 }
 \arguments{
 \item{string}{text to be trimmed}

@@ -4,8 +4,7 @@
 \alias{text_snippet}
 \title{retrieving text snippet}
 \usage{
-text_snippet(x, length = max(nchar(x)), from = NULL, to = NULL,
-  coll = FALSE)
+text_snippet(x, length = max(nchar(x)), from = NULL, to = NULL, coll = FALSE)
 }
 \arguments{
 \item{x}{character vector to be snipped}

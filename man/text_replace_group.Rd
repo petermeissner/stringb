@@ -6,11 +6,23 @@
 \title{function for replacing regex group matches
 generic for getting regex group matches}
 \usage{
-text_replace_group(string, pattern, replacement,
-  group = seq_along(replacement), invert = FALSE, ...)
+text_replace_group(
+  string,
+  pattern,
+  replacement,
+  group = seq_along(replacement),
+  invert = FALSE,
+  ...
+)
 
-\method{text_replace_group}{default}(string, pattern, replacement,
-  group = TRUE, invert = FALSE, ...)
+\method{text_replace_group}{default}(
+  string,
+  pattern,
+  replacement,
+  group = TRUE,
+  invert = FALSE,
+  ...
+)
 }
 \arguments{
 \item{string}{text from which to extract character sequence}

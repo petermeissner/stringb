@@ -5,11 +5,19 @@
 \alias{text_pad.default}
 \title{padding text to specified width}
 \usage{
-text_pad(string, width = max(nchar(string)), pad = " ",
-  side = c("left", "right", "both", "l", "r", "b", 1, 2, 3))
+text_pad(
+  string,
+  width = max(nchar(string)),
+  pad = " ",
+  side = c("left", "right", "both", "l", "r", "b", 1, 2, 3)
+)
 
-\method{text_pad}{default}(string, width = max(nchar(string)),
-  pad = " ", side = c("left", "right", "both", "l", "r", "b", 1, 2, 3))
+\method{text_pad}{default}(
+  string,
+  width = max(nchar(string)),
+  pad = " ",
+  side = c("left", "right", "both", "l", "r", "b", 1, 2, 3)
+)
 }
 \arguments{
 \item{string}{text to be wrapped}
