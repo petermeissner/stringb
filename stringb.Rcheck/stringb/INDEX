@@ -1,0 +1,63 @@
+%.%                     concatenating strings operator
+%..%                    concatenating strings
+invert_spans            function to invert spans to those numbers not
+                        covered
+plot.character          function for plotting text
+stringb_arrange         function to sort df by variables
+text_c                  generic for concatonating strings
+text_collapse           function for collapsing text vectors
+text_count              generic for counting pattern occurences
+text_delete             deleting patterns in string
+text_detect             generic function to test if a regex can be
+                        found within a string
+text_eval               wrapper function of eval() and parse() to
+                        evaluate character vector
+text_extract            extract regex matches
+text_extract_all        extract regex matches
+text_extract_group      generic for getting regex group matches
+text_extract_group_all
+                        generic for getting all regex group matches
+text_filter             generic for subsetting/filtering vectors
+text_length             wrapper around nchar to return text length
+text_locate             function to get start, end, length form pattern
+                        match
+text_locate_all         function to get start, end, length form pattern
+                        match for all matches
+text_locate_all_worker
+                        helper function to get start, end, length form
+                        pattern match
+text_locate_group       generic for getting positions regex groups
+text_locate_worker      helper function to get start, end, length form
+                        pattern match
+text_nchar              wrapper around nchar to return text length
+text_pad                padding text to specified width
+text_read               read in text
+text_rep                generic repeating text
+text_replace            replacing patterns in string
+text_replace_all        replacing patterns in string
+text_replace_group      function for replacing regex group matches
+                        generic for getting regex group matches
+text_replace_locates    text_replace_locates default
+text_show               showing text
+text_snippet            retrieving text snippet
+text_split              generic splitting strings
+text_split_n            generic splitting strings into pieces of length
+                        n
+text_sub                generic for extracting characters sequences by
+                        position
+text_subset             generic for subsetting/filtering vectors
+text_to_lower           function for make text lower case
+text_to_title_case      function for make text lower case
+text_to_upper           function for make text lower case
+text_tokenize           generic for gregexpr wrappers to tokenize text
+text_tokenize_lines     generic to tokenize text into lines
+text_tokenize_sentences
+                        generic to tokenize text into sentences
+text_tokenize_words     generic to tokenize text into words
+text_trim               trim spaces
+text_which              generic function to know in which elements a
+                        pattern can be found
+text_which_value        generic function to get whole elements in which
+                        pattern was found
+text_wrap               wraping text to specified width
+text_write              write text to file

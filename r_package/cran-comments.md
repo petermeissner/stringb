@@ -23,13 +23,13 @@ Please fix and resubmit.
 
 # My Actions
 
-- fixed accordingly
+- README.md is not part of the package anymore
 
 
 
 ## Test environments
 
-- Win10, local (R 3.6.3)
+- Win10, local (R 4.0.3)
 - Ubuntu 18.04 LTS old, devel, release
 - WinBuilder devel, release
 

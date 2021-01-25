@@ -1,8 +1,7 @@
 Package: stringb
 Title: Convenient Base R String Handling
 Date: 2021-01-25
-Version: 0.1.16
-Authors@R: c(
+Version: 0.1.17
     person(
       "Peter", "Meissner",
       email = "retep.meissner@gmail.com",

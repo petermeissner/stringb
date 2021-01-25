@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: Convenient Base R String Handling</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> Convenient Base R String Handling
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;stringb&rsquo; version 0.1.16</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="grapes-.-grapes.html">%.%</a></td>
+<td>concatenating strings operator</td></tr>
+<tr><td style="width: 25%;"><a href="grapes-..-grapes.html">%..%</a></td>
+<td>concatenating strings</td></tr>
+<tr><td style="width: 25%;"><a href="invert_spans.html">invert_spans</a></td>
+<td>function to invert spans to those numbers not covered</td></tr>
+<tr><td style="width: 25%;"><a href="plot.character.html">plot.character</a></td>
+<td>function for plotting text</td></tr>
+<tr><td style="width: 25%;"><a href="stringb_arrange.html">stringb_arrange</a></td>
+<td>function to sort df by variables</td></tr>
+<tr><td style="width: 25%;"><a href="text_c.html">text_c</a></td>
+<td>generic for concatonating strings</td></tr>
+<tr><td style="width: 25%;"><a href="text_c.html">text_c.default</a></td>
+<td>generic for concatonating strings</td></tr>
+<tr><td style="width: 25%;"><a href="text_collapse.html">text_collapse</a></td>
+<td>function for collapsing text vectors</td></tr>
+<tr><td style="width: 25%;"><a href="text_collapse.html">text_collapse.data.frame</a></td>
+<td>function for collapsing text vectors</td></tr>
+<tr><td style="width: 25%;"><a href="text_collapse.html">text_collapse.default</a></td>
+<td>function for collapsing text vectors</td></tr>
+<tr><td style="width: 25%;"><a href="text_collapse.html">text_collapse.list</a></td>
+<td>function for collapsing text vectors</td></tr>
+<tr><td style="width: 25%;"><a href="text_collapse.html">text_collapse.matrix</a></td>
+<td>function for collapsing text vectors</td></tr>
+<tr><td style="width: 25%;"><a href="text_count.html">text_count</a></td>
+<td>generic for counting pattern occurences</td></tr>
+<tr><td style="width: 25%;"><a href="text_count.html">text_count.default</a></td>
+<td>generic for counting pattern occurences</td></tr>
+<tr><td style="width: 25%;"><a href="text_delete.html">text_delete</a></td>
+<td>deleting patterns in string</td></tr>
+<tr><td style="width: 25%;"><a href="text_delete.html">text_delete.default</a></td>
+<td>deleting patterns in string</td></tr>
+<tr><td style="width: 25%;"><a href="text_detect.html">text_detect</a></td>
+<td>generic function to test if a regex can be found within a string</td></tr>
+<tr><td style="width: 25%;"><a href="text_detect.html">text_detect.default</a></td>
+<td>generic function to test if a regex can be found within a string</td></tr>
+<tr><td style="width: 25%;"><a href="text_rep.html">text_dup</a></td>
+<td>generic repeating text</td></tr>
+<tr><td style="width: 25%;"><a href="text_eval.html">text_eval</a></td>
+<td>wrapper function of eval() and parse() to evaluate character vector</td></tr>
+<tr><td style="width: 25%;"><a href="text_extract.html">text_extract</a></td>
+<td>extract regex matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_extract_all.html">text_extract_all</a></td>
+<td>extract regex matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_extract_group.html">text_extract_group</a></td>
+<td>generic for getting regex group matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_extract_group.html">text_extract_group.default</a></td>
+<td>generic for getting regex group matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_extract_group_all.html">text_extract_group_all</a></td>
+<td>generic for getting all regex group matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_extract_group_all.html">text_extract_group_all.default</a></td>
+<td>generic for getting all regex group matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_filter.html">text_filter</a></td>
+<td>generic for subsetting/filtering vectors</td></tr>
+<tr><td style="width: 25%;"><a href="text_which.html">text_grep</a></td>
+<td>generic function to know in which elements a pattern can be found</td></tr>
+<tr><td style="width: 25%;"><a href="text_detect.html">text_grepl</a></td>
+<td>generic function to test if a regex can be found within a string</td></tr>
+<tr><td style="width: 25%;"><a href="text_which_value.html">text_grepv</a></td>
+<td>generic function to get whole elements in which pattern was found</td></tr>
+<tr><td style="width: 25%;"><a href="text_length.html">text_length</a></td>
+<td>wrapper around nchar to return text length</td></tr>
+<tr><td style="width: 25%;"><a href="text_locate.html">text_locate</a></td>
+<td>function to get start, end, length form pattern match</td></tr>
+<tr><td style="width: 25%;"><a href="text_locate.html">text_locate.default</a></td>
+<td>function to get start, end, length form pattern match</td></tr>
+<tr><td style="width: 25%;"><a href="text_locate_all.html">text_locate_all</a></td>
+<td>function to get start, end, length form pattern match for all matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_locate_all.html">text_locate_all.default</a></td>
+<td>function to get start, end, length form pattern match for all matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_locate_all_worker.html">text_locate_all_worker</a></td>
+<td>helper function to get start, end, length form pattern match</td></tr>
+<tr><td style="width: 25%;"><a href="text_locate_group.html">text_locate_group</a></td>
+<td>generic for getting positions regex groups</td></tr>
+<tr><td style="width: 25%;"><a href="text_locate_group.html">text_locate_group.default</a></td>
+<td>generic for getting positions regex groups</td></tr>
+<tr><td style="width: 25%;"><a href="text_locate_worker.html">text_locate_worker</a></td>
+<td>helper function to get start, end, length form pattern match</td></tr>
+<tr><td style="width: 25%;"><a href="text_nchar.html">text_nchar</a></td>
+<td>wrapper around nchar to return text length</td></tr>
+<tr><td style="width: 25%;"><a href="text_pad.html">text_pad</a></td>
+<td>padding text to specified width</td></tr>
+<tr><td style="width: 25%;"><a href="text_pad.html">text_pad.default</a></td>
+<td>padding text to specified width</td></tr>
+<tr><td style="width: 25%;"><a href="text_read.html">text_read</a></td>
+<td>read in text</td></tr>
+<tr><td style="width: 25%;"><a href="text_rep.html">text_rep</a></td>
+<td>generic repeating text</td></tr>
+<tr><td style="width: 25%;"><a href="text_rep.html">text_rep.default</a></td>
+<td>generic repeating text</td></tr>
+<tr><td style="width: 25%;"><a href="text_replace.html">text_replace</a></td>
+<td>replacing patterns in string</td></tr>
+<tr><td style="width: 25%;"><a href="text_replace.html">text_replace.default</a></td>
+<td>replacing patterns in string</td></tr>
+<tr><td style="width: 25%;"><a href="text_replace_all.html">text_replace_all</a></td>
+<td>replacing patterns in string</td></tr>
+<tr><td style="width: 25%;"><a href="text_replace_all.html">text_replace_all.default</a></td>
+<td>replacing patterns in string</td></tr>
+<tr><td style="width: 25%;"><a href="text_replace_group.html">text_replace_group</a></td>
+<td>function for replacing regex group matches generic for getting regex group matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_replace_group.html">text_replace_group.default</a></td>
+<td>function for replacing regex group matches generic for getting regex group matches</td></tr>
+<tr><td style="width: 25%;"><a href="text_replace_locates.html">text_replace_locates</a></td>
+<td>text_replace_locates default</td></tr>
+<tr><td style="width: 25%;"><a href="text_replace_locates.html">text_replace_locates.default</a></td>
+<td>text_replace_locates default</td></tr>
+<tr><td style="width: 25%;"><a href="text_show.html">text_show</a></td>
+<td>showing text</td></tr>
+<tr><td style="width: 25%;"><a href="text_show.html">text_show.default</a></td>
+<td>showing text</td></tr>
+<tr><td style="width: 25%;"><a href="text_snippet.html">text_snippet</a></td>
+<td>retrieving text snippet</td></tr>
+<tr><td style="width: 25%;"><a href="text_split.html">text_split</a></td>
+<td>generic splitting strings</td></tr>
+<tr><td style="width: 25%;"><a href="text_split.html">text_split.default</a></td>
+<td>generic splitting strings</td></tr>
+<tr><td style="width: 25%;"><a href="text_split_n.html">text_split_n</a></td>
+<td>generic splitting strings into pieces of length n</td></tr>
+<tr><td style="width: 25%;"><a href="text_split_n.html">text_split_n.default</a></td>
+<td>generic splitting strings into pieces of length n</td></tr>
+<tr><td style="width: 25%;"><a href="text_sub.html">text_sub</a></td>
+<td>generic for extracting characters sequences by position</td></tr>
+<tr><td style="width: 25%;"><a href="text_sub.html">text_sub.default</a></td>
+<td>generic for extracting characters sequences by position</td></tr>
+<tr><td style="width: 25%;"><a href="text_subset.html">text_subset</a></td>
+<td>generic for subsetting/filtering vectors</td></tr>
+<tr><td style="width: 25%;"><a href="text_tokenize.html">text_tokenize</a></td>
+<td>generic for gregexpr wrappers to tokenize text</td></tr>
+<tr><td style="width: 25%;"><a href="text_tokenize.html">text_tokenize.default</a></td>
+<td>generic for gregexpr wrappers to tokenize text</td></tr>
+<tr><td style="width: 25%;"><a href="text_tokenize_lines.html">text_tokenize_lines</a></td>
+<td>generic to tokenize text into lines</td></tr>
+<tr><td style="width: 25%;"><a href="text_tokenize_lines.html">text_tokenize_lines.default</a></td>
+<td>generic to tokenize text into lines</td></tr>
+<tr><td style="width: 25%;"><a href="text_tokenize_sentences.html">text_tokenize_sentences</a></td>
+<td>generic to tokenize text into sentences</td></tr>
+<tr><td style="width: 25%;"><a href="text_tokenize_sentences.html">text_tokenize_sentences.default</a></td>
+<td>generic to tokenize text into sentences</td></tr>
+<tr><td style="width: 25%;"><a href="text_tokenize_words.html">text_tokenize_words</a></td>
+<td>generic to tokenize text into words</td></tr>
+<tr><td style="width: 25%;"><a href="text_tokenize_words.html">text_tokenize_words.default</a></td>
+<td>generic to tokenize text into words</td></tr>
+<tr><td style="width: 25%;"><a href="text_to_lower.html">text_to_lower</a></td>
+<td>function for make text lower case</td></tr>
+<tr><td style="width: 25%;"><a href="text_to_lower.html">text_to_lower.default</a></td>
+<td>function for make text lower case</td></tr>
+<tr><td style="width: 25%;"><a href="text_to_title_case.html">text_to_title_case</a></td>
+<td>function for make text lower case</td></tr>
+<tr><td style="width: 25%;"><a href="text_to_title_case.html">text_to_title_case.default</a></td>
+<td>function for make text lower case</td></tr>
+<tr><td style="width: 25%;"><a href="text_to_upper.html">text_to_upper</a></td>
+<td>function for make text lower case</td></tr>
+<tr><td style="width: 25%;"><a href="text_to_upper.html">text_to_upper.default</a></td>
+<td>function for make text lower case</td></tr>
+<tr><td style="width: 25%;"><a href="text_trim.html">text_trim</a></td>
+<td>trim spaces</td></tr>
+<tr><td style="width: 25%;"><a href="text_trim.html">text_trim.default</a></td>
+<td>trim spaces</td></tr>
+<tr><td style="width: 25%;"><a href="text_trim.html">text_trim.list</a></td>
+<td>trim spaces</td></tr>
+<tr><td style="width: 25%;"><a href="text_trim.html">text_trim.numeric</a></td>
+<td>trim spaces</td></tr>
+<tr><td style="width: 25%;"><a href="text_which.html">text_which</a></td>
+<td>generic function to know in which elements a pattern can be found</td></tr>
+<tr><td style="width: 25%;"><a href="text_which.html">text_which.default</a></td>
+<td>generic function to know in which elements a pattern can be found</td></tr>
+<tr><td style="width: 25%;"><a href="text_which_value.html">text_which_value</a></td>
+<td>generic function to get whole elements in which pattern was found</td></tr>
+<tr><td style="width: 25%;"><a href="text_which_value.html">text_which_value.default</a></td>
+<td>generic function to get whole elements in which pattern was found</td></tr>
+<tr><td style="width: 25%;"><a href="text_wrap.html">text_wrap</a></td>
+<td>wraping text to specified width</td></tr>
+<tr><td style="width: 25%;"><a href="text_wrap.html">text_wrap.default</a></td>
+<td>wraping text to specified width</td></tr>
+<tr><td style="width: 25%;"><a href="text_write.html">text_write</a></td>
+<td>write text to file</td></tr>
+<tr><td style="width: 25%;"><a href="text_write.html">text_write.default</a></td>
+<td>write text to file</td></tr>
+</table>
+</body></html>

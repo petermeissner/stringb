@@ -12,15 +12,12 @@ version](https://www.r-pkg.org/badges/version/stringb)](https://cran.r-project.o
 
 **Version**
 
-0.1.16
+0.1.17 person( “Peter”, “Meissner”, email =
+“<retep.meissner@gmail.com>”, role = c(“aut”, “cre”) ) )
 
 **License**
 
 MIT + file LICENSE <br>
-
-    ##  Warning in tmp$Author: partial match of 'Author' to 'Authors@R'
-
-Peter Meissner <retep.meissner@gmail.com> \[aut, cre\]
 
 **Description**
 
@@ -172,7 +169,7 @@ objects("package:stringb")
 ``` r
 library(stringb)
 (test_file <- stringb:::test_file("rc_1_ch1.txt")) # just a file accompanying the package to test things
-##  [1] "C:/Users/peter/R/win-library/3.6/stringb/testfiles/rc_1_ch1.txt"
+##  [1] "C:/Users/peter/R/win-library/4.0/stringb/testfiles/rc_1_ch1.txt"
 
 text_read( test_file, tokenize = "\\W", n=20)[67:79]
 ##   [1] "Project"   "Gutenberg" "License"   "included"  "with"      "this"      "eBook"     "or"       
@@ -188,7 +185,7 @@ functionality like on-the-fly-tokenization.
 ``` r
 library(stringb)
 (test_file <- stringb:::test_file("rc_3.txt")) # just a file accompanying the package to test things
-##  [1] "C:/Users/peter/R/win-library/3.6/stringb/testfiles/rc_3.txt"
+##  [1] "C:/Users/peter/R/win-library/4.0/stringb/testfiles/rc_3.txt"
 
 text          <- text_read(test_file, tokenize = "\\W+")
 friday_occurs <- text_detect(text, "FRIDAY", ignore.case=TRUE)
@@ -208,7 +205,7 @@ ignore.case options to make pattern matching case insensitive.
 ``` r
 library(stringb)
 (test_file <- stringb:::test_file("rc_3.txt")) # just a file accompanying the package to test things
-##  [1] "C:/Users/peter/R/win-library/3.6/stringb/testfiles/rc_3.txt"
+##  [1] "C:/Users/peter/R/win-library/4.0/stringb/testfiles/rc_3.txt"
 text          <- text_read(test_file)
 
 plot(text, pattern="Friday", ignore.case=TRUE)
