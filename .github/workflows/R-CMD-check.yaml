@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
-          remotes::install_deps(dependencies = TRUE)
+          remotes::install_deps( pkgdir = "./r_package", dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
         run: rcmdcheck::rcmdcheck(path = "./r_package" args = "--no-manual", error_on = "error")
