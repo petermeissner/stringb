@@ -3,21 +3,23 @@
 
 ## Status
 
-[![Travis-CI Build
-Status](https://api.travis-ci.com/petermeissner/stringb.svg?branch=master)](https://www.travis-ci.com/github/petermeissner/stringb)
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/petermeissner/stringb/workflows/R-CMD-check/badge.svg)](https://github.com/petermeissner/stringb/actions)
 [![codecov](https://codecov.io/gh/petermeissner/stringb/branch/master/graph/badge.svg)](https://codecov.io/gh/petermeissner/stringb/tree/master/R)
 [![CRAN
 version](https://www.r-pkg.org/badges/version/stringb)](https://cran.r-project.org/package=stringb)
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/stringb)
+<!-- badges: end -->
 
 **Version**
 
-0.1.17 person( “Peter”, “Meissner”, email =
-“<retep.meissner@gmail.com>”, role = c(“aut”, “cre”) ) )
+0.1.17
 
 **License**
 
-MIT + file LICENSE <br>
+MIT + file LICENSE <br>Peter Meissner <retep.meissner@gmail.com> \[aut,
+cre\]
 
 **Description**
 
