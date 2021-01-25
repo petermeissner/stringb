@@ -26,5 +26,5 @@ jobs:
           remotes::install_deps( pkgdir = "./r_package", dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
-        run: rcmdcheck::rcmdcheck(path = "./r_package" args = "--no-manual", error_on = "error")
+        run: rcmdcheck::rcmdcheck(path = "./r_package", args = "--no-manual", error_on = "error")
         shell: Rscript {0}
