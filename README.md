@@ -7,17 +7,20 @@
 Status](https://api.travis-ci.com/petermeissner/stringb.svg?branch=master)](https://www.travis-ci.com/github/petermeissner/stringb)
 [![codecov](https://codecov.io/gh/petermeissner/stringb/branch/master/graph/badge.svg)](https://codecov.io/gh/petermeissner/stringb/tree/master/R)
 [![CRAN
-version](http://www.r-pkg.org/badges/version/stringb)](https://cran.r-project.org/package=stringb)
+version](https://www.r-pkg.org/badges/version/stringb)](https://cran.r-project.org/package=stringb)
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/stringb)
 
 **Version**
 
-0.1.15
+0.1.16
 
 **License**
 
-MIT + file LICENSE <br>Peter Meissner <retep.meissner@gmail.com> \[aut,
-cre\]
+MIT + file LICENSE <br>
+
+    ##  Warning in tmp$Author: partial match of 'Author' to 'Authors@R'
+
+Peter Meissner <retep.meissner@gmail.com> \[aut, cre\]
 
 **Description**
 
@@ -37,30 +40,30 @@ methods for other text structures besides plain character vectors.
 
 **This packages aims at:**
 
-  - **no dependencies** except what comes with base-R (i.e. there shall
+-   **no dependencies** except what comes with base-R (i.e. there shall
     be no compilation needed)
-  - for good or worse relying on base-R text handling mechanisms means
+-   for good or worse relying on base-R text handling mechanisms means
     getting **base-R regular expression engine including the Perl mode**
-  - writing **text handling functions as generics** so that methods for
+-   writing **text handling functions as generics** so that methods for
     all kind of structures containing text can be added
-  - providing functions that allow for different character encodings
-  - but rigorously defaulting to UTF-8 as expected input and default
+-   providing functions that allow for different character encodings
+-   but rigorously defaulting to UTF-8 as expected input and default
     output thereby enhancing cross platform cooperation
-  - adding more power to general basic text handling functions by
+-   adding more power to general basic text handling functions by
     additional options (e.g. the text\_read() function allows to read in
     and tokenize text in one function call)
-  - and insisting on a **flat interface** - meaning that all
+-   and insisting on a **flat interface** - meaning that all
     functionality should come from functions and plain parameters (in
     contrast to e.g. parameters that need specialized functions or
     functions outputs to perform)
-  - adding further general text handling tools if there is a general
+-   adding further general text handling tools if there is a general
     enough purpose for the added function(ality)
 
 **This package does not aim at:**
 
-  - being fast (fast is good but will not be traded for the above listed
+-   being fast (fast is good but will not be traded for the above listed
     aims - stringi might be your friend here)
-  - being ultimately compatible (compatible is good but again will not
+-   being ultimately compatible (compatible is good but again will not
     be traded for the above listed aims - again stringi might be your
     solution in that case)
 
@@ -68,54 +71,60 @@ methods for other text structures besides plain character vectors.
 
 Note, that this package uses a Contributor Code of Conduct. By
 participating in this project you agree to abide by its terms:
-<http://contributor-covenant.org/version/1/0/0/> (basically this should
+<https://contributor-covenant.org/version/1/0/0/> (basically this should
 be a place were people get along with each other respectful and nice
 because it’s simply more fun that way for everybody)
 
 Contributions are very much welcome, e.g. in the form of:
 
-  - **typo fixing** ([edit file directly on
+-   **typo fixing** ([edit file directly on
     Github](https://help.github.com/articles/editing-files-in-another-user-s-repository/))
-  - **bug reporting** (file an
+
+-   **bug reporting** (file an
     [issue](https://guides.github.com/features/issues/) - after having
     searched if the issue came up before - as - if possible - [minimal
     reproducable example](https://stackoverflow.com/help/mcve))
-  - **extending help files** (e.g. [edit the respective files directly
+
+-   **extending help files** (e.g. [edit the respective files directly
     on
     Github](https://help.github.com/articles/editing-files-in-another-user-s-repository/)
     or [fork the package](https://help.github.com/articles/fork-a-repo/)
     and later on make a [pull
     request](https://help.github.com/articles/using-pull-requests/);
-    note, that the package use
-    [roxygen2](http://r-pkgs.had.co.nz/man.html) for easing
-    documentation)
-  - **writing example** (e.g. [edit the respective files directly on
+    note, that the package use [roxygen2](https://r-pkgs.org/man.html)
+    for easing documentation)
+
+-   **writing example** (e.g. [edit the respective files directly on
     Github](https://help.github.com/articles/editing-files-in-another-user-s-repository/)
     or [fork the package](https://help.github.com/articles/fork-a-repo/)
     and later on make a [pull
     request](https://help.github.com/articles/using-pull-requests/);
-    note, that the package use
-    [roxygen2](http://r-pkgs.had.co.nz/man.html) for easing
-    documentation)
-  - **vignette writing** (file an
+    note, that the package use [roxygen2](https://r-pkgs.org/man.html)
+    for easing documentation)
+
+-   **vignette writing** (file an
     [issue](https://guides.github.com/features/issues/) first so that we
     can discuss things than [fork the
     package](https://help.github.com/articles/fork-a-repo/) and later on
     make a [pull
     request](https://help.github.com/articles/using-pull-requests/))
-  - **test writing** (have a look at the [test
+
+-   **test writing** (have a look at the [test
     coverage](https://codecov.io/gh/petermeissner/stringb/tree/master/R)
     than [fork the
     package](https://help.github.com/articles/fork-a-repo/) and later on
     make a [pull
     request](https://help.github.com/articles/using-pull-requests/))
-  - **feature suggestions** (file an
+
+-   **feature suggestions** (file an
     [issue](https://guides.github.com/features/issues/) describing the
     idea, why this is important, possible alternative solutions and an
     example)
-  - **general discussion** of approach and or implementation (file an
+
+-   **general discussion** of approach and or implementation (file an
     [issue](https://guides.github.com/features/issues/))
-  - implementation **improvements** (file an
+
+-   implementation **improvements** (file an
     [issue](https://guides.github.com/features/issues/) naming whats to
     be improved, why and how)
 
@@ -163,7 +172,7 @@ objects("package:stringb")
 ``` r
 library(stringb)
 (test_file <- stringb:::test_file("rc_1_ch1.txt")) # just a file accompanying the package to test things
-##  [1] "C:/home/documents/R/win-library/3.6/stringb/testfiles/rc_1_ch1.txt"
+##  [1] "C:/Users/peter/R/win-library/3.6/stringb/testfiles/rc_1_ch1.txt"
 
 text_read( test_file, tokenize = "\\W", n=20)[67:79]
 ##   [1] "Project"   "Gutenberg" "License"   "included"  "with"      "this"      "eBook"     "or"       
@@ -179,7 +188,7 @@ functionality like on-the-fly-tokenization.
 ``` r
 library(stringb)
 (test_file <- stringb:::test_file("rc_3.txt")) # just a file accompanying the package to test things
-##  [1] "C:/home/documents/R/win-library/3.6/stringb/testfiles/rc_3.txt"
+##  [1] "C:/Users/peter/R/win-library/3.6/stringb/testfiles/rc_3.txt"
 
 text          <- text_read(test_file, tokenize = "\\W+")
 friday_occurs <- text_detect(text, "FRIDAY", ignore.case=TRUE)
@@ -199,7 +208,7 @@ ignore.case options to make pattern matching case insensitive.
 ``` r
 library(stringb)
 (test_file <- stringb:::test_file("rc_3.txt")) # just a file accompanying the package to test things
-##  [1] "C:/home/documents/R/win-library/3.6/stringb/testfiles/rc_3.txt"
+##  [1] "C:/Users/peter/R/win-library/3.6/stringb/testfiles/rc_3.txt"
 text          <- text_read(test_file)
 
 plot(text, pattern="Friday", ignore.case=TRUE)

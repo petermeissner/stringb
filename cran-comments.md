@@ -1,40 +1,29 @@
 
 # Your message:
 
-You may have seen that when running your package code with current
-r-devel, one gets warnings about
+Thanks, we see:
 
-  cannot xtfrm data frames
+   Found the following (possibly) invalid URLs:
+     URL: http://contributor-covenant.org/version/1/0/0/ (moved to
+https://www.contributor-covenant.org/version/1/0/0/)
+       From: README.md
+       Status: 200
+       Message: OK
+     URL: http://r-pkgs.had.co.nz/man.html (moved to
+https://r-pkgs.org/man.html)
+       From: README.md
+       Status: 200
+       Message: OK
 
-This is because you call order() on a data frame with k rows and 1
-column which (currently) returns something of length k.
+Please change http --> https, add trailing slashes, or follow moved
+content as appropriate.
 
-Now,
-
-? sort says
-
-     Sort (or _order_) a vector or factor (partially) into ascending or
-     descending order.  For ordering along more than one variable,
-     e.g., for sorting data frames, see ‘order’
-
-where in turn ? order says
-
-     ‘order’ returns a permutation which rearranges its first argument
-     into ascending or descending order, breaking ties by further
-     arguments.  ‘sort.list’ does the same, using only one argument.
-     See the examples for how to use these functions to sort data
-     frames, etc.
-
-and then the examples clearly explain to use do.call() for data
-frames, ideally also unnaming to avoid name clashes.
-
-Can you please change your package code to no longer call order() on
-data frames?
+Please fix and resubmit.
 
 
 # My Actions
 
-- fixed stringb_arrange() accordingly
+- fixed accordingly
 
 
 

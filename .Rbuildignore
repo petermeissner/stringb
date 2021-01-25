@@ -13,3 +13,4 @@ stringb.pdf
 ^cran-comments\.md$
 ^codecov\.yml$
 ^README\.Rmd$
+^CRAN-RELEASE$
