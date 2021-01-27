@@ -10,15 +10,16 @@ on:
       - main
       - master
   schedule:
-    - cron: "* * 27 * *"
+    - cron: "0 0 27 * *"
 
 name: R-CMD-check
 
 jobs:
+
   R-CMD-check:
+
     runs-on: ubuntu-latest
-#    env:
-#      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
 
